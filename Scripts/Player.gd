@@ -63,3 +63,7 @@ func setMovement(movement):
 func bounce():
 	setMovement(lastMovement * -1)
 
+
+
+func _on_EndLevel_body_entered(body):
+	print("endlevelge")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Tilemap/tilemap-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Bumper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/EndLevel.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -50,3 +51,8 @@ position = Vector2( 237, 387 )
 
 [node name="KinematicBody2D3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 236, 463 )
+
+[node name="EndLevel" parent="." instance=ExtResource( 4 )]
+position = Vector2( 409, 382 )
+
+[connection signal="body_entered" from="EndLevel" to="Player" method="_on_EndLevel_body_entered"]
