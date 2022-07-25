@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Tilemap/tilemap-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "tilemap-Sheet.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 11, 0, 0, 12, 0, 0, 13, 0, 0, 196610, 0, 0, 196611, 0, 0, 262153, 0, 0, 262154, 0, 0, 327685, 0, 0, 327690, 0, 0, 393220, 0, 0, 393221, 0, 0, 393226, 0, 0, 458756, 0, 0, 458763, 0, 0, 524292, 0, 0, 524299, 0, 0, 589835, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 917505, 0, 0, 917516, 0, 0, 983041, 0, 0, 983045, 0, 0, 983052, 0, 0, 1048581, 0, 0, 1114117, 0, 0, 1179653, 0, 0, 1245195, 0, 0, 1310731, 0, 0, 1376267, 0, 0, 1441794, 0, 0, 1441803, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1572867, 0, 0, 1572874, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638405, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 237, 59 )
