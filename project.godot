@@ -13,6 +13,10 @@ config_version=4
 config/name="MobileGameTest"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
+
 [display]
 
 window/size/width=480

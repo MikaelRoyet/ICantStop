@@ -1,14 +1,16 @@
 extends KinematicBody2D
 
-const SPEED = 100
-var velocityPlayer = Vector2(0,0)
+const SPEED = GameManager.SPEED
+var velocityPlayer
 var idle = true
 var respawnPoint
+var lastMovement
 
 
 func _ready():
 	respawnPoint = position
-	idle = true
+	velocityPlayer = Vector2(0,0)
+	lastMovement = Vector2(0,0)
 	
 
 
@@ -21,7 +23,9 @@ func _physics_process(delta):
 			if collision.collider is TileMap:
 				death()
 			if collision.collider.is_in_group("Bumper"):
-				bounce()
+				if collision.collider.has_method("move"):
+					collision.collider.move(lastMovement)
+					bounce()
 
 
 func _on_SwipeDetector_swiped(direction):
@@ -52,15 +56,10 @@ func reset():
 	position = respawnPoint
 	
 func setMovement(movement):
+	lastMovement = movement
 	velocityPlayer = movement
 	idle = false
 
 func bounce():
-	print("BOUNCGE")
-	print(velocityPlayer)
-	print(velocityPlayer * -1)
-	setMovement(velocityPlayer * -1)
+	setMovement(lastMovement * -1)
 
-
-func _on_Bumper_body_entered(body):
-	bounce()

@@ -1,16 +1,33 @@
-extends Area2D
+extends KinematicBody2D
+
+const SPEED = GameManager.SPEED
+var velocityBumper = Vector2(0,0)
+var lastMovement
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	lastMovement = Vector2(0,0)
+
+func _physics_process(delta):
+	velocityBumper = move_and_slide(velocityBumper)
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision:
+			if collision.collider.is_in_group("Bumper"):
+				print("collisionge")
+				if collision.collider.has_method("move"):
+					print("collisionge2")
+					collision.collider.move(lastMovement)
+					bounce()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func move(movement):
+	velocityBumper = movement
+	lastMovement = movement
+
+
+func bounce():
+	move(lastMovement * -1)

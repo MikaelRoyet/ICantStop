@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/Tilemap/tilemap-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Bumper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Bumper.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -42,11 +42,11 @@ tile_data = PoolIntArray( 11, 0, 0, 12, 0, 0, 13, 0, 0, 196610, 0, 0, 196611, 0,
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 237, 59 )
 
-[node name="Bumper" parent="." instance=ExtResource( 3 )]
-position = Vector2( 244.474, 313.505 )
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 237, 284 )
 
-[node name="Bumper2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 88.7345, 45.4449 )
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 237, 387 )
 
-[connection signal="body_entered" from="Bumper" to="Player" method="_on_Bumper_body_entered"]
-[connection signal="body_entered" from="Bumper2" to="Player" method="_on_Bumper_body_entered"]
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 236, 463 )
