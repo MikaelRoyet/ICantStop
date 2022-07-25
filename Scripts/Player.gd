@@ -16,7 +16,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision:
 			if collision.collider is TileMap:
-				print("DEADGE")
+				death()
 
 
 func _on_SwipeDetector_swiped(direction):
@@ -38,6 +38,6 @@ func _on_SwipeDetector_swiped(direction):
 		velocityPlayer = Vector2(-SPEED, 0)
 	
 func death():
-	pass
+	print("DEADGE")
 	
 
