@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const SPEED = GameManager.SPEED
+var speedModifier
 var velocityPlayer
 var idle = true
 var respawnPoint
@@ -11,6 +12,7 @@ func _ready():
 	respawnPoint = position
 	velocityPlayer = Vector2(0,0)
 	lastMovement = Vector2(0,0)
+	speedModifier = 1
 	
 
 
@@ -53,17 +55,28 @@ func death():
 	
 func reset():
 	print("RESETGE")
-	position = respawnPoint
+	moveToPoint(respawnPoint)
+	speedModifier = 1
 	
 func setMovement(movement):
 	lastMovement = movement
-	velocityPlayer = movement
+	velocityPlayer = movement * speedModifier
 	idle = false
 
 func bounce():
 	setMovement(lastMovement * -1)
 
+func moveToPoint(point):
+	position = point
 
 
 func _on_EndLevel_body_entered(body):
 	print("endlevelge")
+
+
+func _on_Teleporter_body_entered(body):
+	print("TELEPORTATIONGE")
+	
+func _on_AccelerationZone_body_entered(body):
+	speedModifier = 2
+	setMovement(lastMovement)

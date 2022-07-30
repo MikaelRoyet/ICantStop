@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bumperV2.png-01f4c1e9592695c1af5b4fe06ec893ad.stex"
+path="res://.import/bumperV2.png-607d1f3bb9c944c1cae8c19b0234ea01.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bumperV2.png"
-dest_files=[ "res://.import/bumperV2.png-01f4c1e9592695c1af5b4fe06ec893ad.stex" ]
+source_file="res://Sprites/bumperV2.png"
+dest_files=[ "res://.import/bumperV2.png-607d1f3bb9c944c1cae8c19b0234ea01.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
