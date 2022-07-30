@@ -31,3 +31,6 @@ func move(movement):
 
 func bounce():
 	move(lastMovement * -1)
+
+func moveToPoint(point):
+	position = point
