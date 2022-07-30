@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player.png" type="Texture" id=2]
 [ext_resource path="res://Scene/SwipeDetector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/NeonTrail.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13, 13 )
@@ -20,5 +21,8 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="Line2D" parent="." instance=ExtResource( 4 )]
+targetPath = NodePath("..")
 
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]
