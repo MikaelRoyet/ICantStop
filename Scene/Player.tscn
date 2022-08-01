@@ -22,7 +22,7 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Line2D" parent="." instance=ExtResource( 4 )]
+[node name="Trail" parent="." instance=ExtResource( 4 )]
 targetPath = NodePath("..")
 
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]

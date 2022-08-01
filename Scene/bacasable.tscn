@@ -4,7 +4,7 @@
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Bumper.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scene/EndLevel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://AccelerationZone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/AccelerationZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/Teleporter.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
