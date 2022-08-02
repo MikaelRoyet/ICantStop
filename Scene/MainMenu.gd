@@ -3,7 +3,6 @@ extends Control
 onready var playButton : = $Panel/ButtonsContainer/PlayButton
 onready var levelsButton : = $Panel/ButtonsContainer/LevelsButton
 onready var optionsButton : = $Panel/ButtonsContainer/OptionsButton
-onready var quitButton : = $Panel/ButtonsContainer/QuitButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

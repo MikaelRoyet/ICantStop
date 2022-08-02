@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="InGameUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_left = 25.0
+margin_top = 20.0
+margin_right = -25.0
+margin_bottom = 85.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 430.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+custom_constants/separation = 300
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/HBoxContainer"]
+margin_right = 65.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+
+[node name="SoundOffButton" type="Button" parent="MarginContainer/HBoxContainer"]
+margin_left = 365.0
+margin_right = 430.0
+margin_bottom = 65.0
+size_flags_horizontal = 11
