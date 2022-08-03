@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Gradiant/GradientTrail.tres" type="Gradient" id=1]
+[ext_resource path="res://Scripts/Objects/Trail.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Objects/trail.png" type="Texture" id=3]
+
+[node name="Trail" type="Line2D"]
+points = PoolVector2Array( -192, -129, 135, -128 )
+width = 20.0
+default_color = Color( 0.219608, 1, 0, 1 )
+gradient = ExtResource( 1 )
+texture = ExtResource( 3 )
+texture_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource( 2 )
+speed = 2.0
+trailLength = 15

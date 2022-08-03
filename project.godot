@@ -11,8 +11,8 @@ config_version=4
 [application]
 
 config/name="ICantStop"
-run/main_scene="res://Scene/MainMenu.tscn"
-config/icon="res://Sprites/icon.png"
+run/main_scene="res://Scenes/UI/MainMenu.tscn"
+config/icon="res://Sprites/Objects/icon.png"
 
 [autoload]
 
