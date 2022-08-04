@@ -11,41 +11,86 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Title" type="TextureRect" parent="Panel"]
+[node name="MainPanel" type="Control" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Title" type="TextureRect" parent="Panel/MainPanel"]
 margin_right = 481.0
 margin_bottom = 107.0
 
-[node name="ButtonsContainer" type="VBoxContainer" parent="Panel"]
+[node name="ButtonsContainer" type="VBoxContainer" parent="Panel/MainPanel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -147.0
-margin_top = -271.0
-margin_right = 153.0
-margin_bottom = 79.0
+margin_left = 73.0
+margin_top = 136.0
+margin_right = 373.0
+margin_bottom = 486.0
 custom_constants/separation = 60
 
-[node name="PlayButton" type="Button" parent="Panel/ButtonsContainer"]
+[node name="PlayButton" type="Button" parent="Panel/MainPanel/ButtonsContainer"]
 margin_right = 300.0
 margin_bottom = 76.0
 size_flags_vertical = 7
 text = "PLAY"
 
-[node name="LevelsButton" type="Button" parent="Panel/ButtonsContainer"]
+[node name="LevelsButton" type="Button" parent="Panel/MainPanel/ButtonsContainer"]
 margin_top = 136.0
 margin_right = 300.0
 margin_bottom = 213.0
 size_flags_vertical = 7
 text = "LEVELs"
 
-[node name="OptionsButton" type="Button" parent="Panel/ButtonsContainer"]
+[node name="OptionsButton" type="Button" parent="Panel/MainPanel/ButtonsContainer"]
 margin_top = 273.0
 margin_right = 300.0
 margin_bottom = 350.0
 size_flags_vertical = 7
 text = "OPTIONS"
 
-[connection signal="pressed" from="Panel/ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="Panel/ButtonsContainer/LevelsButton" to="." method="_on_LevelsButton_pressed"]
-[connection signal="pressed" from="Panel/ButtonsContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[node name="LevelPanel" type="Control" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LevelSeparator" type="HSeparator" parent="Panel/LevelPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 460.0
+margin_bottom = 836.0
+custom_constants/separation = 0
+
+[node name="LevelHeader" type="HBoxContainer" parent="Panel/LevelPanel/LevelSeparator"]
+anchor_right = 1.0
+margin_bottom = 64.0
+custom_constants/separation = 75
+
+[node name="LevelButtonReturn" type="Button" parent="Panel/LevelPanel/LevelSeparator/LevelHeader"]
+margin_right = 12.0
+margin_bottom = 64.0
+
+[node name="LevelTitle" type="TextureRect" parent="Panel/LevelPanel/LevelSeparator/LevelHeader"]
+margin_left = 87.0
+margin_right = 480.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+
+[node name="LevelContainer" type="VBoxContainer" parent="Panel/LevelPanel/LevelSeparator"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -308.0
+margin_right = 240.0
+margin_bottom = 348.0
+
+[connection signal="pressed" from="Panel/MainPanel/ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Panel/MainPanel/ButtonsContainer/LevelsButton" to="." method="_on_LevelsButton_pressed"]
+[connection signal="pressed" from="Panel/MainPanel/ButtonsContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Panel/LevelPanel/LevelSeparator/LevelHeader/LevelButtonReturn" to="." method="_on_LevelButtonReturn_pressed"]
