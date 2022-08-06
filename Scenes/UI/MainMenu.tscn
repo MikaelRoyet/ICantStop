@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/UI/ArrowBack.png" type="Texture" id=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -71,11 +72,12 @@ margin_bottom = 64.0
 custom_constants/separation = 75
 
 [node name="LevelButtonReturn" type="Button" parent="Panel/LevelPanel/LevelSeparator/LevelHeader"]
-margin_right = 12.0
+margin_right = 44.0
 margin_bottom = 64.0
+icon = ExtResource( 2 )
 
 [node name="LevelTitle" type="TextureRect" parent="Panel/LevelPanel/LevelSeparator/LevelHeader"]
-margin_left = 87.0
+margin_left = 119.0
 margin_right = 480.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
