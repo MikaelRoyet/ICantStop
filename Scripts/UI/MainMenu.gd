@@ -41,10 +41,10 @@ func createButtonLevels():
 	var listOfScene = GameManager.list_files_in_directory("res://Scenes/Levels")
 	for scene in listOfScene:
 		var button = Button.new()
-		button.connect('pressed', self, 'on_levelButton_pressed')
+		button.connect('pressed', self, 'on_levelButton_pressed', [scene])
 		levelContainer.add_child(button)
 
 
 
-func on_levelButton_pressed():
-	print("pressed")
+func on_levelButton_pressed(scene):
+	get_tree().change_scene("res://Scenes/Levels/" + scene)
