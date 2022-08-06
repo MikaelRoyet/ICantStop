@@ -91,6 +91,9 @@ margin_left = -240.0
 margin_top = -308.0
 margin_right = 240.0
 margin_bottom = 348.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Panel/MainPanel/ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Panel/MainPanel/ButtonsContainer/LevelsButton" to="." method="_on_LevelsButton_pressed"]

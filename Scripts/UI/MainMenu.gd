@@ -7,10 +7,13 @@ onready var optionsButton : = $Panel/MainPanel/ButtonsContainer/OptionsButton
 onready var MainPanel : = $Panel/MainPanel
 onready var LevelPanel : = $Panel/LevelPanel
 
+onready var levelContainer : = $Panel/LevelPanel/LevelSeparator/LevelContainer
 
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
 	LevelPanel.visible = false
+	createButtonLevels()
 
 
 
@@ -32,3 +35,16 @@ func _on_OptionsButton_pressed():
 func _on_LevelButtonReturn_pressed():
 	LevelPanel.visible = false
 	MainPanel.visible = true
+
+
+func createButtonLevels():
+	var listOfScene = GameManager.list_files_in_directory("res://Scenes/Levels")
+	for scene in listOfScene:
+		var button = Button.new()
+		button.connect('pressed', self, 'on_levelButton_pressed')
+		levelContainer.add_child(button)
+
+
+
+func on_levelButton_pressed():
+	print("pressed")

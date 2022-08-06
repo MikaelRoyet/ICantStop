@@ -22,7 +22,7 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision:
-			if collision.collider is TileMap:
+			if collision.collider is TileMap or collision.collider.is_in_group("Wall"):
 				death()
 			if collision.collider.is_in_group("Bumper"):
 				if collision.collider.has_method("move"):
