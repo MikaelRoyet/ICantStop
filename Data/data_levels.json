@@ -1,0 +1,24 @@
+{"Level_01":	{
+	"name": "How do I stop?",
+	"nextLevel": "Level_02",
+	"world":0,
+	"scene":"Level_01.tscn",
+  },
+  
+  
+  "Level_02":	{
+	"name": "Ho I can't stop",
+	"nextLevel": "Level_03",
+	"world":0,
+	"scene":"Level_02.tscn"
+  },
+  
+  
+  "Level_03":	{
+	"name": "I'm fine",
+	"nextLevel": "Level_04",
+	"world":0,
+	"scene":"Level_03.tscn",
+  }
+  
+}

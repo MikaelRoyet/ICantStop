@@ -9,11 +9,14 @@ onready var LevelPanel : = $Panel/LevelPanel
 
 onready var levelContainer : = $Panel/LevelPanel/LevelSeparator/LevelContainer
 
-
+var LevelButton = load("res://Scenes/UI/ButtonLevel.tscn")
+var worldSelected = 0
+var levelDatas
 
 func _ready():
+	levelDatas = GameManager.levelDataDict
 	LevelPanel.visible = false
-	createButtonLevels()
+	generateLevels()
 
 
 
@@ -48,4 +51,15 @@ func createButtonLevels():
 
 
 func on_levelButton_pressed(scene):
+	GameManager.presentLevel = scene
 	get_tree().change_scene("res://Scenes/Levels/" + scene)
+	
+	
+func generateLevels():
+
+	for level in levelDatas:
+		if levelDatas[level]["world"] == worldSelected:
+			var levelHBox = LevelButton.instance()
+			levelContainer.add_child(levelHBox)
+			levelHBox.setAllValues(level, levelDatas[level]["name"])
+			levelHBox.connect('pressed', self, 'on_levelButton_pressed', [levelDatas[level]["scene"]])

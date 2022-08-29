@@ -52,34 +52,28 @@ size_flags_vertical = 7
 text = "OPTIONS"
 
 [node name="LevelPanel" type="Control" parent="Panel"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="LevelSeparator" type="HSeparator" parent="Panel/LevelPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 460.0
-margin_bottom = 836.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_constants/separation = 0
 
 [node name="LevelHeader" type="HBoxContainer" parent="Panel/LevelPanel/LevelSeparator"]
 anchor_right = 1.0
-margin_bottom = 64.0
+margin_bottom = 38.0
 custom_constants/separation = 75
 
 [node name="LevelButtonReturn" type="Button" parent="Panel/LevelPanel/LevelSeparator/LevelHeader"]
 margin_right = 44.0
-margin_bottom = 64.0
+margin_bottom = 38.0
 icon = ExtResource( 2 )
 
 [node name="LevelTitle" type="TextureRect" parent="Panel/LevelPanel/LevelSeparator/LevelHeader"]
 margin_left = 119.0
 margin_right = 480.0
-margin_bottom = 64.0
+margin_bottom = 38.0
 size_flags_horizontal = 3
 
 [node name="LevelContainer" type="VBoxContainer" parent="Panel/LevelPanel/LevelSeparator"]
@@ -92,9 +86,6 @@ margin_top = -308.0
 margin_right = 152.0
 margin_bottom = 348.0
 custom_constants/separation = 50
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="Panel/MainPanel/ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Panel/MainPanel/ButtonsContainer/LevelsButton" to="." method="_on_LevelsButton_pressed"]
