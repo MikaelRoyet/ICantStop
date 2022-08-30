@@ -26,6 +26,12 @@
 	"nextLevel": "Level_05",
 	"world":0,
 	"scene":"Level_04.tscn",
-  }
+  },
   
+   "Level_05":	{
+	"name": "Where did I go?",
+	"nextLevel": "Level_06",
+	"world":0,
+	"scene":"Level_05.tscn",
+  }
 }
