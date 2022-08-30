@@ -23,6 +23,7 @@ shape = SubResource( 1 )
 current = true
 
 [node name="Trail" parent="." instance=ExtResource( 4 )]
+position = Vector2( 40, 56 )
 targetPath = NodePath("..")
 
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]
