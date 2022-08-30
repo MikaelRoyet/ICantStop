@@ -55,8 +55,9 @@ func death():
 	
 func reset():
 	print("RESETGE")
-	moveToPoint(respawnPoint)
-	speedModifier = 1
+	GameManager.resetLevel()
+	#moveToPoint(respawnPoint)
+	#speedModifier = 1
 	
 func setMovement(movement):
 	lastMovement = movement

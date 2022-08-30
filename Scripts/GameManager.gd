@@ -48,4 +48,7 @@ func load_level_data():
 func goToNextLevel():
 	print(presentLevel)
 	get_tree().change_scene("res://Scenes/Levels/" + levelDataDict[presentLevel.split('.')[0]]["nextLevel"] + ".tscn")
+
 	
+func resetLevel():
+	get_tree().reload_current_scene()
