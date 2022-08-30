@@ -15,10 +15,17 @@
   
   
   "Level_03":	{
-	"name": "I'm fine",
+	"name": "Push the buttons",
 	"nextLevel": "Level_04",
 	"world":0,
 	"scene":"Level_03.tscn",
+  },
+  
+   "Level_04":	{
+	"name": "More buttons",
+	"nextLevel": "Level_05",
+	"world":0,
+	"scene":"Level_04.tscn",
   }
   
 }

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://WallTileMap.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
+
+[node name="Level_02" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -131055, 30, 0, -131054, 33, 0, -131053, 33, 0, -131052, 31, 0, -65519, 26, 0, -65516, 24, 0, 17, 26, 0, 20, 24, 0, 65537, 30, 0, 65538, 33, 0, 65539, 33, 0, 65540, 33, 0, 65541, 33, 0, 65542, 33, 0, 65543, 33, 0, 65544, 33, 0, 65545, 33, 0, 65546, 33, 0, 65547, 33, 0, 65548, 33, 0, 65549, 33, 0, 65550, 33, 0, 65551, 31, 0, 65552, 30, 0, 65553, 34, 0, 65556, 32, 0, 65557, 31, 0, 131073, 26, 0, 131087, 24, 0, 131088, 26, 0, 131093, 24, 0, 196609, 26, 0, 196623, 24, 0, 196624, 26, 0, 196629, 24, 0, 262145, 26, 0, 262159, 24, 0, 262160, 26, 0, 262165, 24, 0, 327681, 26, 0, 327685, 16, 0, 327686, 17, 0, 327687, 17, 0, 327688, 17, 0, 327689, 18, 0, 327695, 24, 0, 327696, 26, 0, 327701, 24, 0, 393217, 26, 0, 393221, 32, 0, 393222, 33, 0, 393223, 33, 0, 393224, 31, 0, 393225, 26, 0, 393231, 24, 0, 393232, 26, 0, 393237, 24, 0, 458753, 26, 0, 458760, 24, 0, 458761, 26, 0, 458767, 24, 0, 458768, 26, 0, 458773, 24, 0, 524289, 26, 0, 524296, 24, 0, 524297, 26, 0, 524303, 24, 0, 524304, 26, 0, 524309, 24, 0, 589825, 26, 0, 589832, 24, 0, 589833, 26, 0, 589839, 24, 0, 589840, 26, 0, 589845, 24, 0, 655361, 38, 0, 655362, 17, 0, 655363, 17, 0, 655364, 17, 0, 655365, 17, 0, 655366, 18, 0, 655368, 24, 0, 655369, 26, 0, 655375, 24, 0, 655376, 26, 0, 655381, 24, 0, 720902, 26, 0, 720904, 24, 0, 720905, 26, 0, 720911, 24, 0, 720912, 26, 0, 720917, 24, 0, 786438, 26, 0, 786440, 24, 0, 786441, 26, 0, 786447, 32, 0, 786448, 34, 0, 786453, 24, 0, 851974, 26, 0, 851976, 24, 0, 851977, 26, 0, 851989, 24, 0, 917510, 26, 0, 917512, 24, 0, 917513, 26, 0, 917525, 24, 0, 983046, 26, 0, 983048, 24, 0, 983049, 26, 0, 983061, 24, 0, 1048582, 26, 0, 1048584, 24, 0, 1048585, 38, 0, 1048586, 17, 0, 1048587, 17, 0, 1048588, 17, 0, 1048589, 17, 0, 1048590, 17, 0, 1048591, 17, 0, 1048592, 17, 0, 1048593, 17, 0, 1048594, 17, 0, 1048595, 17, 0, 1048596, 17, 0, 1048597, 39, 0, 1114114, 30, 0, 1114115, 33, 0, 1114116, 33, 0, 1114117, 33, 0, 1114118, 34, 0, 1114120, 32, 0, 1114121, 33, 0, 1114122, 33, 0, 1114123, 33, 0, 1114124, 31, 0, 1179650, 26, 0, 1179660, 24, 0, 1245186, 26, 0, 1245196, 24, 0, 1310722, 26, 0, 1310732, 24, 0, 1376258, 26, 0, 1376268, 24, 0, 1441794, 26, 0, 1441804, 24, 0, 1507330, 26, 0, 1507340, 24, 0, 1572866, 26, 0, 1572876, 24, 0, 1638402, 38, 0, 1638403, 17, 0, 1638404, 17, 0, 1638405, 17, 0, 1638406, 17, 0, 1638407, 17, 0, 1638408, 17, 0, 1638409, 17, 0, 1638410, 17, 0, 1638411, 17, 0, 1638412, 39, 0 )
+
+[node name="EndLevel" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 608, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 240, 752 )
+
+[node name="BlueBlocks" type="Node" parent="."]
+
+[node name="Block" parent="BlueBlocks" instance=ExtResource( 4 )]
+position = Vector2( 368, 336 )
+color = Color( 0, 0.717647, 1, 1 )
+
+[node name="Block5" parent="BlueBlocks" instance=ExtResource( 4 )]
+position = Vector2( 336, 336 )
+color = Color( 0, 0.717647, 1, 1 )
+
+[node name="Block2" parent="BlueBlocks" instance=ExtResource( 4 )]
+position = Vector2( 400, 336 )
+color = Color( 0, 0.717647, 1, 1 )
+
+[node name="Block3" parent="BlueBlocks" instance=ExtResource( 4 )]
+position = Vector2( 432, 336 )
+color = Color( 0, 0.717647, 1, 1 )
+
+[node name="Block4" parent="BlueBlocks" instance=ExtResource( 4 )]
+position = Vector2( 464, 336 )
+color = Color( 0, 0.717647, 1, 1 )
+
+[node name="Interruptor" parent="BlueBlocks" instance=ExtResource( 3 )]
+position = Vector2( 368, 208 )
+color = Color( 0, 0.717647, 1, 1 )
+listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3"), NodePath("../Block4"), NodePath("../Block5") ]
+
+[node name="BlueBlocks2" type="Node" parent="."]
+
+[node name="Block" parent="BlueBlocks2" instance=ExtResource( 4 )]
+position = Vector2( 560, 336 )
+color = Color( 1, 0.447059, 0, 1 )
+
+[node name="Block2" parent="BlueBlocks2" instance=ExtResource( 4 )]
+position = Vector2( 592, 336 )
+color = Color( 1, 0.447059, 0, 1 )
+
+[node name="Block3" parent="BlueBlocks2" instance=ExtResource( 4 )]
+position = Vector2( 624, 336 )
+color = Color( 1, 0.447059, 0, 1 )
+
+[node name="Block4" parent="BlueBlocks2" instance=ExtResource( 4 )]
+position = Vector2( 656, 336 )
+color = Color( 1, 0.447059, 0, 1 )
+
+[node name="Interruptor" parent="BlueBlocks2" instance=ExtResource( 3 )]
+position = Vector2( 640, 480 )
+color = Color( 1, 0.447059, 0, 1 )
+listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3"), NodePath("../Block4") ]
