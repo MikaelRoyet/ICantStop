@@ -40,5 +40,29 @@
 	"nextLevel": "Level_07",
 	"world":0,
 	"scene":"Level_06.tscn",
+  },
+   "Level_07":	{
+	"name": "Trust the teleporter",
+	"nextLevel": "Level_08",
+	"world":0,
+	"scene":"Level_07.tscn",
+  },
+   "Level_08":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_09",
+	"world":0,
+	"scene":"Level_08.tscn",
+  }, 
+  "Level_09":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_10",
+	"world":0,
+	"scene":"Level_09.tscn",
+  },
+   "Level_10":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_11",
+	"world":0,
+	"scene":"Level_10.tscn",
   }
 }

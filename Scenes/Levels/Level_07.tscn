@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://WallTileMap.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Teleporter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
+
+[node name="Level_07" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 327692, 30, 0, 327693, 33, 0, 327694, 33, 0, 327695, 33, 0, 327696, 33, 0, 327697, 33, 0, 327698, 31, 0, 393228, 26, 0, 393234, 24, 0, 458764, 26, 0, 458770, 24, 0, 524290, 30, 0, 524291, 33, 0, 524292, 33, 0, 524293, 33, 0, 524294, 33, 0, 524295, 33, 0, 524296, 31, 0, 524300, 26, 0, 524306, 24, 0, 589826, 26, 0, 589832, 24, 0, 589836, 26, 0, 589838, 19, 0, 589842, 24, 0, 655362, 38, 0, 655363, 17, 0, 655364, 17, 0, 655365, 17, 0, 655366, 18, 0, 655368, 24, 0, 655372, 26, 0, 655374, 35, 0, 655378, 32, 0, 655379, 33, 0, 655380, 33, 0, 655381, 33, 0, 655382, 33, 0, 655383, 31, 0, 720902, 26, 0, 720904, 24, 0, 720908, 26, 0, 720919, 24, 0, 786438, 26, 0, 786440, 24, 0, 786444, 26, 0, 786450, 16, 0, 786451, 17, 0, 786452, 17, 0, 786453, 17, 0, 786454, 17, 0, 786455, 39, 0, 851974, 26, 0, 851976, 24, 0, 851980, 38, 0, 851981, 17, 0, 851982, 17, 0, 851983, 17, 0, 851984, 17, 0, 851985, 17, 0, 851986, 39, 0, 917509, 30, 0, 917510, 34, 0, 917512, 32, 0, 917513, 31, 0, 983045, 26, 0, 983049, 24, 0, 1048581, 26, 0, 1048585, 24, 0, 1114117, 26, 0, 1114121, 24, 0, 1179653, 26, 0, 1179657, 24, 0, 1245187, 30, 0, 1245188, 33, 0, 1245189, 34, 0, 1245193, 32, 0, 1245194, 33, 0, 1245195, 31, 0, 1310723, 26, 0, 1310731, 24, 0, 1376259, 26, 0, 1376267, 24, 0, 1441795, 26, 0, 1441803, 24, 0, 1507331, 26, 0, 1507339, 24, 0, 1572867, 26, 0, 1572875, 24, 0, 1638403, 38, 0, 1638404, 17, 0, 1638405, 17, 0, 1638406, 17, 0, 1638407, 17, 0, 1638408, 17, 0, 1638409, 17, 0, 1638410, 17, 0, 1638411, 39, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 240, 752 )
+
+[node name="EndLevel" parent="." instance=ExtResource( 5 )]
+position = Vector2( 720, 368 )
+
+[node name="Teleporter" parent="." instance=ExtResource( 3 )]
+position = Vector2( 240, 304 )
+arrivalPoint = NodePath("../Teleporter2")
+
+[node name="Teleporter2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 432, 368 )
+arrivalPoint = NodePath("../Teleporter")
