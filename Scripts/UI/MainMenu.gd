@@ -7,7 +7,7 @@ onready var optionsButton : = $Panel/MainPanel/ButtonsContainer/OptionsButton
 onready var MainPanel : = $Panel/MainPanel
 onready var LevelPanel : = $Panel/LevelPanel
 
-onready var levelContainer : = $Panel/LevelPanel/LevelSeparator/LevelContainer
+onready var levelContainer : = $Panel/LevelPanel/LevelContainer
 
 var LevelButton = load("res://Scenes/UI/ButtonLevel.tscn")
 var worldSelected = 0
