@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=6]
 
-[node name="Level_05" type="Node2D"]
+[node name="Level_06" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )

@@ -48,7 +48,7 @@
 	"scene":"Level_07.tscn",
   },
    "Level_08":	{
-	"name": "Turn things around",
+	"name": "Push it to the limit",
 	"nextLevel": "Level_09",
 	"world":0,
 	"scene":"Level_08.tscn",
