@@ -29,7 +29,7 @@ func _physics_process(delta):
 					collision.collider.move(lastMovement)
 					bounce()
 
-
+#Récupère la direction swiper par le joueur
 func _on_SwipeDetector_swiped(direction):
 	
 	#UP
@@ -48,28 +48,34 @@ func _on_SwipeDetector_swiped(direction):
 	if direction.x == 1 and direction.y == 0:
 		setMovement(Vector2(-SPEED, 0))
 	
+#Fonction exécutée quand le joueur perd
 func death():
 	print("DEADGE")
 	idle = true
 	reset()
 	
+#Appelle le Reset le niveau
 func reset():
 	print("RESETGE")
 	GameManager.resetLevel()
 	#moveToPoint(respawnPoint)
 	#speedModifier = 1
 	
+#Change la direction du joueur
 func setMovement(movement):
 	lastMovement = movement
 	velocityPlayer = movement * speedModifier
 	idle = false
 
+#Inverse le mouvement du joueur
 func bounce():
 	setMovement(lastMovement * -1)
 
+#Téléporte le joueur à un point donné
 func moveToPoint(point):
 	position = point
 
+#Modifie la vitesse du joueur
 func modifySpeedModifier(value):
 	speedModifier = value
 	setMovement(lastMovement)

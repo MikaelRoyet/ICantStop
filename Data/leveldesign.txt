@@ -1,0 +1,27 @@
+Idée level design :
+
+Level avec des rebonds de bumper
+
+Level avec un bumper qui rebondit sur  d'autres bumper et qui passe sur un interupteur
+Le joureur doit passer une barrière au bon moment
+
+Level avec des bumper qui passe dans des teleporter
+
+Level avec des moving blocs dangereux
+
+Level ou il faut faire passer un bloc bumper au bon moment entre des dangerous bumper
+
+
+
+
+Idée objets :
+
+Faire en sorte que les blocs de couleur puisse être en mouvement grace aux bumper 
+OU
+Bloc comme les bumpers mais qui est dangereux ++
+
+Dalle directionnelle
+
+Accelerateur seulement sur les dalles
+
+Decelerateur

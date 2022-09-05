@@ -20,26 +20,28 @@ func _ready():
 
 
 
-
+#Lance le jeu 
 func _on_PlayButton_pressed():
 	get_tree().change_scene("res://Scenes/bacasable.tscn")
 
-
+#Charge le menu des niveaux
 func _on_LevelsButton_pressed():
 	MainPanel.visible = false
 	LevelPanel.visible = true
 	print("levels")
 
-
+#Charge le menu 
 func _on_OptionsButton_pressed():
 	print("options")
 
 
+#Reviens  au menu principal
 func _on_LevelButtonReturn_pressed():
 	LevelPanel.visible = false
 	MainPanel.visible = true
 
 
+#Obselète?
 func createButtonLevels():
 	var listOfScene = GameManager.list_files_in_directory("res://Scenes/Levels")
 	for scene in listOfScene:
@@ -49,12 +51,13 @@ func createButtonLevels():
 		levelContainer.add_child(button)
 
 
-
+#MLance le niveau correspondant au bouton
 func on_levelButton_pressed(scene):
 	GameManager.presentLevel = scene
 	get_tree().change_scene("res://Scenes/Levels/" + scene)
 	
 	
+#Génère les boutons des niveaux à partir d'un json
 func generateLevels():
 
 	for level in levelDatas:

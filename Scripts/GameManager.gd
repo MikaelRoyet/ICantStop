@@ -12,7 +12,7 @@ var presentLevel = "Menu"
 func _ready():
 	load_level_data()
 
-
+#pas utilisé : renvoie la liste des fichiers dans dossier
 func list_files_in_directory(path):
 	var files = []
 	var dir = Directory.new()
@@ -31,7 +31,7 @@ func list_files_in_directory(path):
 	return files
 
 
-
+#Charge les informations des niveaux dans un dictionnaire
 func load_level_data():
 	var data = File.new()
 	if not data.file_exists(LEVEL_DATA):
@@ -45,12 +45,13 @@ func load_level_data():
 	data.close()
 	
 
+#Charge le niveau suivant en fonction du niveau actuel
 func goToNextLevel():
 	print(presentLevel)
 	get_tree().change_scene("res://Scenes/Levels/" + levelDataDict[presentLevel.split('.')[0]]["nextLevel"] + ".tscn")
 	presentLevel = levelDataDict[presentLevel.split('.')[0]]["nextLevel"]
 
 	
-	
+#Recharge le niveau actuel
 func resetLevel():
 	get_tree().reload_current_scene()
