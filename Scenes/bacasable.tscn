@@ -27,7 +27,8 @@ position = Vector2( 227.656, 197.823 )
 position = Vector2( 409, 382 )
 
 [node name="AccelerationZone" parent="." instance=ExtResource( 5 )]
-position = Vector2( 398.942, 193.245 )
+position = Vector2( 536, 224 )
+scale = Vector2( 10, 10 )
 
 [node name="Bumper" parent="." instance=ExtResource( 3 )]
 position = Vector2( 100, 195 )
