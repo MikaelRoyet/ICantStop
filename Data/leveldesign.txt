@@ -16,12 +16,5 @@ Level ou il faut faire passer un bloc bumper au bon moment entre des dangerous b
 
 Idée objets :
 
-Faire en sorte que les blocs de couleur puisse être en mouvement grace aux bumper 
-OU
-Bloc comme les bumpers mais qui est dangereux ++
 
 Dalle directionnelle
-
-Accelerateur seulement sur les dalles
-
-Decelerateur
