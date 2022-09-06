@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://WallTileMap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/deathBlock.tscn" type="PackedScene" id=10]
 
 [node name="bacasable" type="Node2D"]
 
@@ -106,6 +107,15 @@ color = Color( 0, 1, 0.0392157, 1 )
 [node name="Block10" parent="." instance=ExtResource( 9 )]
 position = Vector2( -240, -368 )
 color = Color( 0, 1, 0.0392157, 1 )
+
+[node name="deathBlock" parent="." instance=ExtResource( 10 )]
+position = Vector2( 101, 296 )
+
+[node name="deathBlock2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -28, 196 )
+
+[node name="deathBlock3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 226, 95 )
 
 [connection signal="body_entered" from="EndLevel" to="Player" method="_on_EndLevel_body_entered"]
 [connection signal="body_entered" from="AccelerationZone" to="Player" method="_on_AccelerationZone_body_entered"]
