@@ -8,6 +8,7 @@ var respawnPoint
 var lastMovement
 
 
+
 func _ready():
 	respawnPoint = position
 	velocityPlayer = Vector2(0,0)

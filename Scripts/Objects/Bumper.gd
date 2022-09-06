@@ -4,10 +4,13 @@ const SPEED = GameManager.SPEED
 var velocityBumper = Vector2(0,0)
 var lastMovement
 
-
+export (Vector2) var directionStart = Vector2(0,0)
 
 func _ready():
 	lastMovement = Vector2(0,0)
+	if directionStart != Vector2(0,0):
+		velocityBumper = directionStart * SPEED
+		lastMovement = directionStart * SPEED
 
 func _physics_process(delta):
 	velocityBumper = move_and_slide(velocityBumper)
