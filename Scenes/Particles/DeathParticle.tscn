@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+angular_velocity = 1000.0
+orbit_velocity = 0.2
+orbit_velocity_random = 0.0
+scale = 5.0
+color = Color( 0, 1, 0.027451, 1 )
+
+[node name="Node2D" type="Particles2D"]
+scale = Vector2( 3, 3 )
+z_index = 1
+emitting = false
+amount = 50
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.6
+process_material = SubResource( 1 )

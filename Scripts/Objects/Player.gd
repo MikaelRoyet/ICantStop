@@ -1,13 +1,15 @@
 extends KinematicBody2D
 
 const SPEED = GameManager.SPEED
+onready var sprite = $Sprite
+onready var trail = $Trail
 var speedModifier
 var velocityPlayer
 var idle = true
 var respawnPoint
 var lastMovement
 
-
+var deathParticle = load("res://Scenes/Particles/DeathParticle.tscn")
 
 func _ready():
 	respawnPoint = position
@@ -51,9 +53,16 @@ func _on_SwipeDetector_swiped(direction):
 	
 #Fonction exécutée quand le joueur perd
 func death():
-	print("DEADGE")
-	idle = true
-	reset()
+	if !idle :
+		print("DEADGE")
+		idle = true
+		var iDeathParticle = deathParticle.instance()
+		add_child(iDeathParticle)
+		iDeathParticle.restart()
+		sprite.visible = false
+		trail.visible = false
+		wait(0.3, "reset")
+
 	
 #Appelle le Reset le niveau
 func reset():
@@ -81,3 +90,10 @@ func modifySpeedModifier(value):
 	speedModifier = value
 	setMovement(lastMovement)
 
+func wait(s, action):
+	var timer = Timer.new()
+	timer.connect("timeout",self, action)
+	timer.wait_time = s
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
