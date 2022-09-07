@@ -6,6 +6,7 @@ onready var trail = $Trail
 var speedModifier
 var velocityPlayer
 var idle = true
+var isDead = false
 var respawnPoint
 var lastMovement
 
@@ -56,10 +57,11 @@ func death():
 	if !idle :
 		print("DEADGE")
 		idle = true
+		isDead = true
 		GameManager.createParticle(deathParticle, position)
 		sprite.visible = false
 		trail.visible = false
-		wait(0.3, "reset")
+		GameManager.wait(0.3, "reset", self)
 
 	
 #Appelle le Reset le niveau
@@ -71,9 +73,10 @@ func reset():
 	
 #Change la direction du joueur
 func setMovement(movement):
-	lastMovement = movement
-	velocityPlayer = movement * speedModifier
-	idle = false
+	if !isDead:
+		lastMovement = movement
+		velocityPlayer = movement * speedModifier
+		idle = false
 
 #Inverse le mouvement du joueur
 func bounce():
@@ -88,11 +91,4 @@ func modifySpeedModifier(value):
 	speedModifier = value
 	setMovement(lastMovement)
 
-func wait(s, action):
-	var timer = Timer.new()
-	timer.connect("timeout",self, action)
-	timer.wait_time = s
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
 

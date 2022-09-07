@@ -56,10 +56,19 @@ func goToNextLevel():
 func resetLevel():
 	get_tree().reload_current_scene()
 
-
+#Créer une particule et lance son émission à une position donné
 func createParticle(particle, position):
 		var iParticle = particle.instance()
 		get_tree().root.add_child(iParticle)
 		iParticle.position = position
 		iParticle.restart()
-	
+
+#Attend pendent S seconde puis lance la méthode action sur l'objet object
+func wait(s, action, object):
+	var timer = Timer.new()
+	timer.connect("timeout",object, action)
+	timer.wait_time = s
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+
