@@ -56,9 +56,7 @@ func death():
 	if !idle :
 		print("DEADGE")
 		idle = true
-		var iDeathParticle = deathParticle.instance()
-		add_child(iDeathParticle)
-		iDeathParticle.restart()
+		GameManager.createParticle(deathParticle, position)
 		sprite.visible = false
 		trail.visible = false
 		wait(0.3, "reset")
@@ -97,3 +95,4 @@ func wait(s, action):
 	timer.one_shot = true
 	add_child(timer)
 	timer.start()
+

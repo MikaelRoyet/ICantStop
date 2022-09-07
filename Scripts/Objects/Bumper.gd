@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 const SPEED = GameManager.SPEED
+
+onready var particleBounce = load("res://Scenes/Particles/ParticleBounce.tscn")
+
 var velocityBumper = Vector2(0,0)
 var lastMovement
 
@@ -19,9 +22,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision:
 			if collision.collider.is_in_group("Bumper"):
-				print("collisionge")
 				if collision.collider.has_method("move"):
-					print("collisionge2")
 					collision.collider.move(lastMovement)
 					bounce()
 
@@ -30,6 +31,7 @@ func _physics_process(delta):
 func move(movement):
 	velocityBumper = movement
 	lastMovement = movement
+	GameManager.createParticle(particleBounce, position)
 
 
 func bounce():

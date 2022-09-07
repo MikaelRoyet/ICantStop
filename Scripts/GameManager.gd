@@ -55,3 +55,11 @@ func goToNextLevel():
 #Recharge le niveau actuel
 func resetLevel():
 	get_tree().reload_current_scene()
+
+
+func createParticle(particle, position):
+		var iParticle = particle.instance()
+		get_tree().root.add_child(iParticle)
+		iParticle.position = position
+		iParticle.restart()
+	
