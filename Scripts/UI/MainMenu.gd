@@ -16,6 +16,7 @@ var worldSelected = 0
 var levelDatas
 
 func _ready():
+	GameManager.setLevel(self)
 	levelDatas = GameManager.levelDataDict
 	LevelPanel.visible = false
 	generateLevels()

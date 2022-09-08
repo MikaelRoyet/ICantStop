@@ -9,7 +9,8 @@ var next_level = null
 
 func _ready():
 	current_level.connect("level_changed", self, 'handle_level_changed')
-	
+
+#Executé au changement de scene et apelle l'animation de transition
 func handle_level_changed(level_path: String):
 	print("load : " + level_path)
 	if ResourceLoader.exists(level_path):
@@ -23,7 +24,7 @@ func handle_level_changed(level_path: String):
 	colorRect.visible = true
 
 
-
+#Executé à la fin d'une des animation de transition
 func _on_AnimationPlayer_animation_finished(anim_name):
 	match anim_name:
 		"fade_in":

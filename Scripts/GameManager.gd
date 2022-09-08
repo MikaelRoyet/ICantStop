@@ -72,16 +72,19 @@ func wait(s, action, object):
 	add_child(timer)
 	timer.start()
 
-
+#Met a jour le niveau en cours (objet)
 func setLevel(level):
 	currentLevel = level
 
+#Récupère le nom de niveau suivant dans le dico
 func getNextLevel(level_name):
 	var levelName = setPathForLevelName(levelDataDict[level_name]["nextLevel"])
 	return levelName
 
+#Revoie le chemin complet d'un niveau a partir de son nom
 func setPathForLevelName(levelName):
 	return "res://Scenes/Levels/" + levelName + ".tscn"
 
+#Appelle la scene du menu principale
 func goToMainMenu():
 	currentLevel.emitSignalMenu()

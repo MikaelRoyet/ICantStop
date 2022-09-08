@@ -91,5 +91,6 @@ func modifySpeedModifier(value):
 	speedModifier = value
 	setMovement(lastMovement)
 
+#bloque les mouvements du joueur
 func stop():
 	setMovement(Vector2.ZERO)
