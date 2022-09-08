@@ -3,6 +3,7 @@ extends Node
 onready var current_level = $Menu
 onready var anim = $AnimationPlayer
 onready var canvas = $CanvasLayer
+onready var colorRect = $CanvasLayer/ColorRect
 
 var next_level = null
 
@@ -19,6 +20,7 @@ func handle_level_changed(level_path: String):
 	print("nextlevel : " + level_path)
 	anim.play("fade_in")
 	canvas.layer = 5
+	colorRect.visible = true
 
 
 
@@ -36,3 +38,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 		"fade_out":
 			canvas.layer = -1
+			colorRect.visible = false
