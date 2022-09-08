@@ -91,4 +91,5 @@ func modifySpeedModifier(value):
 	speedModifier = value
 	setMovement(lastMovement)
 
-
+func stop():
+	setMovement(Vector2.ZERO)

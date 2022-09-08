@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_MainMenuButton_pressed():
-	get_tree().change_scene(GameManager.MENU_SCENE)
+	GameManager.goToMainMenu()
 
 
 func _on_SoundOffButton_pressed():

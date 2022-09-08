@@ -1,5 +1,7 @@
 extends Control
 
+signal level_changed(level_name)
+
 onready var playButton : = $Panel/MainPanel/ButtonsContainer/PlayButton
 onready var levelsButton : = $Panel/MainPanel/ButtonsContainer/LevelsButton
 onready var optionsButton : = $Panel/MainPanel/ButtonsContainer/OptionsButton
@@ -22,7 +24,7 @@ func _ready():
 
 #Lance le jeu 
 func _on_PlayButton_pressed():
-	get_tree().change_scene("res://Scenes/bacasable.tscn")
+	emit_signal("level_changed", "res://Scenes/bacasable.tscn")
 
 #Charge le menu des niveaux
 func _on_LevelsButton_pressed():
@@ -54,7 +56,7 @@ func createButtonLevels():
 #MLance le niveau correspondant au bouton
 func on_levelButton_pressed(scene):
 	GameManager.presentLevel = scene
-	get_tree().change_scene("res://Scenes/Levels/" + scene)
+	emit_signal("level_changed", "res://Scenes/Levels/" + scene)
 	
 	
 #Génère les boutons des niveaux à partir d'un json

@@ -4,10 +4,11 @@ const SPEED = 300
 const SPEED_MODIFIER_ACCELERATION = 2
 const MENU_SCENE = "res://Scenes/UI/MainMenu.tscn"
 const LEVEL_DATA = "res://Data/data_levels.json"
-
+signal level_changed(level_name)
 var levelDataDict
 
 var presentLevel = "Menu"
+var currentLevel
 
 func _ready():
 	load_level_data()
@@ -47,14 +48,13 @@ func load_level_data():
 
 #Charge le niveau suivant en fonction du niveau actuel
 func goToNextLevel():
-	print(presentLevel)
-	get_tree().change_scene("res://Scenes/Levels/" + levelDataDict[presentLevel.split('.')[0]]["nextLevel"] + ".tscn")
-	presentLevel = levelDataDict[presentLevel.split('.')[0]]["nextLevel"]
+	currentLevel.emitSignalNextLevel()
+
 
 	
 #Recharge le niveau actuel
 func resetLevel():
-	get_tree().reload_current_scene()
+	currentLevel.emitSignalLevel()
 
 #Créer une particule et lance son émission à une position donné
 func createParticle(particle, position):
@@ -72,3 +72,16 @@ func wait(s, action, object):
 	add_child(timer)
 	timer.start()
 
+
+func setLevel(level):
+	currentLevel = level
+
+func getNextLevel(level_name):
+	var levelName = setPathForLevelName(levelDataDict[level_name]["nextLevel"])
+	return levelName
+
+func setPathForLevelName(levelName):
+	return "res://Scenes/Levels/" + levelName + ".tscn"
+
+func goToMainMenu():
+	currentLevel.emitSignalMenu()
