@@ -56,6 +56,7 @@ func goToNextLevel():
 	currentLevel.emitSignalNextLevel()
 
 
+
 	
 #Recharge le niveau actuel
 func resetLevel():
@@ -93,3 +94,14 @@ func setPathForLevelName(levelName):
 #Appelle la scene du menu principale
 func goToMainMenu():
 	currentLevel.emitSignalMenu()
+
+
+func saveGame():
+	var save_game = File.new()
+	save_game.open(LEVEL_SAVE, File.WRITE)
+	save_game.store_line(to_json(levelSaveDict))
+	save_game.close()
+
+func unlockLevel(level_name):
+	levelSaveDict[levelDataDict[level_name]["nextLevel"]] = 1
+	saveGame()

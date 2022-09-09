@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://WallTileMap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=5]
 
 [node name="Level_02" type="Node2D"]
 script = ExtResource( 4 )
@@ -21,3 +22,5 @@ position = Vector2( 240, 688 )
 
 [node name="EndLevel" parent="." instance=ExtResource( 3 )]
 position = Vector2( 272, -496 )
+
+[node name="InGameUI" parent="." instance=ExtResource( 5 )]

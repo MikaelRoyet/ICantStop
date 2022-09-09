@@ -10,6 +10,7 @@ func _ready():
 
 func emitSignalNextLevel():
 	print(level_name)
+	GameManager.unlockLevel(level_name)
 	emit_signal("level_changed", GameManager.getNextLevel(level_name))
 	
 func emitSignalLevel():

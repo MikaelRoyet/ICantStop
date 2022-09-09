@@ -2,7 +2,6 @@ extends Control
 
 signal level_changed(level_name)
 
-onready var levelsButton : = $Panel/MainPanel/ButtonsContainer/LevelsButton
 
 
 onready var MainPanel : = $Panel/MainPanel
@@ -32,6 +31,7 @@ func _on_LevelsButton_pressed():
 func _on_LevelButtonReturn_pressed():
 	LevelPanel.visible = false
 	MainPanel.visible = true
+	refreshLevel()
 
 
 #Obselète?
@@ -59,3 +59,8 @@ func generateLevels():
 			levelContainer.add_child(levelHBox)
 			levelHBox.setAllValues(level, levelDatas[level]["numero"])
 			levelHBox.connect('pressed', self, 'on_levelButton_pressed', [levelDatas[level]["scene"]])
+			levelHBox.disabled = !GameManager.levelSaveDict[level]
+
+func refreshLevel():
+	for levelHBox in levelContainer.get_children():
+		levelHBox.disabled = !GameManager.levelSaveDict[levelHBox.level_name]
