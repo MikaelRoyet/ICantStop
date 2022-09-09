@@ -4,7 +4,6 @@ const SPEED = 300
 const SPEED_MODIFIER_ACCELERATION = 2
 const MENU_SCENE = "res://Scenes/UI/MainMenu.tscn"
 const LEVEL_DATA = "res://Data/data_levels.json"
-signal level_changed(level_name)
 var levelDataDict
 
 var presentLevel = "Menu"

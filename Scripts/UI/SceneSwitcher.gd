@@ -35,7 +35,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			current_level.connect("level_changed", self, 'handle_level_changed')
 			next_level = null
 			anim.play("fade_out")
-			
+			#canvas.layer = -1
 
 		"fade_out":
 			canvas.layer = -1

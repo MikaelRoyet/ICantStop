@@ -3,6 +3,7 @@
 	"nextLevel": "Level_02",
 	"world":0,
 	"scene":"Level_01.tscn",
+	"numero":"01",
   },
   
   
@@ -10,7 +11,8 @@
 	"name": "Ho I can't stop",
 	"nextLevel": "Level_03",
 	"world":0,
-	"scene":"Level_02.tscn"
+	"scene":"Level_02.tscn",
+	"numero":"02",
   },
   
   
@@ -19,6 +21,7 @@
 	"nextLevel": "Level_04",
 	"world":0,
 	"scene":"Level_03.tscn",
+	"numero":"03",
   },
   
    "Level_04":	{
@@ -26,6 +29,7 @@
 	"nextLevel": "Level_05",
 	"world":0,
 	"scene":"Level_04.tscn",
+	"numero":"04",
   },
   
    "Level_05":	{
@@ -33,6 +37,7 @@
 	"nextLevel": "Level_06",
 	"world":0,
 	"scene":"Level_05.tscn",
+	"numero":"05",
   },
    
    "Level_06":	{
@@ -40,29 +45,34 @@
 	"nextLevel": "Level_07",
 	"world":0,
 	"scene":"Level_06.tscn",
+	"numero":"06",
   },
    "Level_07":	{
 	"name": "Trust the teleporter",
 	"nextLevel": "Level_08",
 	"world":0,
 	"scene":"Level_07.tscn",
+	"numero":"07",
   },
    "Level_08":	{
 	"name": "Push it to the limit",
 	"nextLevel": "Level_09",
 	"world":0,
 	"scene":"Level_08.tscn",
+	"numero":"08",
   }, 
   "Level_09":	{
 	"name": "Turn things around",
 	"nextLevel": "Level_10",
 	"world":0,
 	"scene":"Level_09.tscn",
+	"numero":"09",
   },
    "Level_10":	{
 	"name": "Turn things around",
 	"nextLevel": "Level_11",
 	"world":0,
 	"scene":"Level_10.tscn",
+	"numero":"10",
   }
 }

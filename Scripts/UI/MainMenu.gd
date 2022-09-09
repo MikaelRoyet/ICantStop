@@ -67,5 +67,5 @@ func generateLevels():
 		if levelDatas[level]["world"] == worldSelected:
 			var levelHBox = LevelButton.instance()
 			levelContainer.add_child(levelHBox)
-			levelHBox.setAllValues(level, levelDatas[level]["name"])
+			levelHBox.setAllValues(level, levelDatas[level]["numero"])
 			levelHBox.connect('pressed', self, 'on_levelButton_pressed', [levelDatas[level]["scene"]])

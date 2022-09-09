@@ -42,11 +42,8 @@ Faire des options (sounds)
 
 transition screen
 -Faire une vrai animation de transition rapide
--Problème de clique sur l'UI après transition
 
 save to unlock levels
-
-case avec un numéro pour l'écran des levels (grid)
 
 30 levels
 
