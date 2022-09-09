@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/ArrowBack.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/UI/SceneSwitcher.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Animations/UI_fade_in.tres" type="Animation" id=4]
 [ext_resource path="res://Scenes/Animations/UI_fade_out.tres" type="Animation" id=5]
+[ext_resource path="res://Sprites/UI/TitlePixelArtCantStop.png" type="Texture" id=6]
 
 [node name="SceneSwitcher" type="Node"]
 script = ExtResource( 3 )
@@ -39,43 +40,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="MainPanel" type="Control" parent="Menu/Panel"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Title" type="TextureRect" parent="Menu/Panel/MainPanel"]
-margin_right = 481.0
-margin_bottom = 107.0
+margin_left = -48.0
+margin_top = 56.0
+margin_right = 152.0
+margin_bottom = 106.0
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
 
-[node name="ButtonsContainer" type="VBoxContainer" parent="Menu/Panel/MainPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 73.0
-margin_top = 136.0
-margin_right = 373.0
-margin_bottom = 486.0
+[node name="LevelsButton" type="Button" parent="Menu/Panel/MainPanel"]
+margin_left = 90.0
+margin_top = 252.0
+margin_right = 390.0
+margin_bottom = 602.0
+size_flags_vertical = 7
+text = "START"
+
+[node name="OptionsContainer" type="HBoxContainer" parent="Menu/Panel/MainPanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -86.0
 custom_constants/separation = 60
 
-[node name="PlayButton" type="Button" parent="Menu/Panel/MainPanel/ButtonsContainer"]
-margin_right = 300.0
-margin_bottom = 76.0
-size_flags_vertical = 7
-text = "PLAY"
+[node name="SoundButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
+margin_right = 12.0
+margin_bottom = 86.0
 
-[node name="LevelsButton" type="Button" parent="Menu/Panel/MainPanel/ButtonsContainer"]
-margin_top = 136.0
-margin_right = 300.0
-margin_bottom = 213.0
-size_flags_vertical = 7
-text = "LEVELs"
+[node name="InfoButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
+margin_left = 72.0
+margin_right = 84.0
+margin_bottom = 86.0
 
-[node name="OptionsButton" type="Button" parent="Menu/Panel/MainPanel/ButtonsContainer"]
-margin_top = 273.0
-margin_right = 300.0
-margin_bottom = 350.0
-size_flags_vertical = 7
-text = "OPTIONS"
+[node name="BuyButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
+margin_left = 144.0
+margin_right = 156.0
+margin_bottom = 86.0
 
 [node name="LevelPanel" type="Control" parent="Menu/Panel"]
 anchor_right = 1.0
@@ -111,7 +114,5 @@ custom_constants/hseparation = 10
 columns = 5
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="pressed" from="Menu/Panel/MainPanel/ButtonsContainer/PlayButton" to="Menu" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="Menu/Panel/MainPanel/ButtonsContainer/LevelsButton" to="Menu" method="_on_LevelsButton_pressed"]
-[connection signal="pressed" from="Menu/Panel/MainPanel/ButtonsContainer/OptionsButton" to="Menu" method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Menu/Panel/MainPanel/LevelsButton" to="Menu" method="_on_LevelsButton_pressed"]
 [connection signal="pressed" from="Menu/Panel/LevelPanel/LevelHeader/LevelButtonReturn" to="Menu" method="_on_LevelButtonReturn_pressed"]

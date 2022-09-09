@@ -4,13 +4,15 @@ const SPEED = 300
 const SPEED_MODIFIER_ACCELERATION = 2
 const MENU_SCENE = "res://Scenes/UI/MainMenu.tscn"
 const LEVEL_DATA = "res://Data/data_levels.json"
+const LEVEL_SAVE = "res://Data/data_level_save.json"
 var levelDataDict
+var levelSaveDict
 
 var presentLevel = "Menu"
 var currentLevel
 
 func _ready():
-	load_level_data()
+	load_all_data()
 
 #pas utilisé : renvoie la liste des fichiers dans dossier
 func list_files_in_directory(path):
@@ -32,19 +34,23 @@ func list_files_in_directory(path):
 
 
 #Charge les informations des niveaux dans un dictionnaire
-func load_level_data():
+func load_data(path):
 	var data = File.new()
-	if not data.file_exists(LEVEL_DATA):
+	if not data.file_exists(path):
 		return # Error! We don't have a save to load.
 		
-	data.open(LEVEL_DATA, File.READ)
+	data.open(path, File.READ)
 	var json = data.get_as_text()
-	levelDataDict = JSON.parse(json).result
-	print("init")
-	print(levelDataDict)
+	var dico = JSON.parse(json).result
 	data.close()
-	
+	return dico
 
+	
+func load_all_data():
+	levelDataDict = load_data(LEVEL_DATA)
+	levelSaveDict = load_data(LEVEL_SAVE)
+	
+	
 #Charge le niveau suivant en fonction du niveau actuel
 func goToNextLevel():
 	currentLevel.emitSignalNextLevel()
