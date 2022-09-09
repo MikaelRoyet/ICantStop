@@ -37,13 +37,14 @@ DEsign pour les boutons et le menu
 -> faire un truc simple et applicable partout
 
 Faire des options (sounds)
-- activer/couper musique
-- activer/couper soundfx
+- activer/couper musique et soundfx
+
+(Faire la page de tuto)
+
+
 
 transition screen
 -Faire une vrai animation de transition rapide
-
-save to unlock levels
 
 30 levels
 

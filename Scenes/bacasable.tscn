@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://WallTileMap.tres" type="TileSet" id=1]
+[ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=4]

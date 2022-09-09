@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://WallTileMap.tres" type="TileSet" id=1]
+[ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Teleporter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=8]
 
 [node name="Level_06" type="Node2D"]
 script = ExtResource( 7 )
@@ -68,3 +69,5 @@ isVisible = false
 position = Vector2( 384, 544 )
 color = Color( 1, 0.654902, 0, 1 )
 listBlocks = [ NodePath("../Block"), NodePath("../Block2") ]
+
+[node name="InGameUI" parent="." instance=ExtResource( 8 )]
