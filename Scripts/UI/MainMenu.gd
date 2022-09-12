@@ -25,13 +25,14 @@ func _on_LevelsButton_pressed():
 	MainPanel.visible = false
 	LevelPanel.visible = true
 	print("levels")
+	refreshLevel()
 
 
 #Reviens  au menu principal
 func _on_LevelButtonReturn_pressed():
 	LevelPanel.visible = false
 	MainPanel.visible = true
-	refreshLevel()
+
 
 
 #Obselète?
@@ -63,4 +64,4 @@ func generateLevels():
 
 func refreshLevel():
 	for levelHBox in levelContainer.get_children():
-		levelHBox.disabled = !GameManager.levelSaveDict[levelHBox.level_name]
+		levelHBox.disabled = !GameManager.levelSaveDict["Level_" + levelHBox.text]
