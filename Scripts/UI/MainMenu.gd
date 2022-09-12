@@ -6,6 +6,11 @@ signal level_changed(level_name)
 
 onready var MainPanel : = $Panel/MainPanel
 onready var LevelPanel : = $Panel/LevelPanel
+onready var Title : = $Panel/MainPanel/Title
+onready var animTitle = $Panel/MainPanel/Title/TitleAnimationPlayer
+onready var soundBtn : = $Panel/MainPanel/OptionsContainer/SoundButton
+onready var iconSound : = preload("res://Sprites/UI/img/soundOn.png")
+onready var iconMuted : = preload("res://Sprites/UI/img/soundMuted.png")
 
 onready var levelContainer : = $Panel/LevelPanel/LevelContainer
 
@@ -14,6 +19,7 @@ var worldSelected = 0
 var levelDatas
 
 func _ready():
+	animTitle.play("TitleFloating")
 	GameManager.setLevel(self)
 	levelDatas = GameManager.levelDataDict
 	LevelPanel.visible = false
@@ -64,3 +70,11 @@ func generateLevels():
 func refreshLevel():
 	for levelHBox in levelContainer.get_children():
 		levelHBox.disabled = !GameManager.levelSaveDict[levelHBox.level_name]
+
+func _on_SoundButton_toggled(button_pressed):
+	if button_pressed :
+		soundBtn.icon = iconMuted
+		# TODO je coupe le son
+	else :
+		soundBtn.icon = iconSound
+		#TODO et je remet le son
