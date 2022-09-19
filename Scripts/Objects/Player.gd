@@ -3,6 +3,7 @@ extends KinematicBody2D
 const SPEED = GameManager.SPEED
 onready var sprite = $Sprite
 onready var trail = $Trail
+onready var camera = $Camera2D
 var speedModifier
 var velocityPlayer
 var idle = true
@@ -59,6 +60,7 @@ func death():
 		idle = true
 		isDead = true
 		GameManager.createParticle(deathParticle, position)
+		camera.apply_noise_shake()
 		sprite.visible = false
 		trail.visible = false
 		GameManager.wait(0.3, "reset", self)
