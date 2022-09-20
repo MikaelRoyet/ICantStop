@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/img/ArrowBack.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Sprites/UI/img/soundOn.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/UI/img/shopping-cart.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/UI/img/info.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/pixeled52.tres" type="DynamicFont" id=10]
+[ext_resource path="res://UI_Styles/PlayButtonStyle.tres" type="StyleBox" id=11]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -89,46 +91,75 @@ anims/TitleFloating = SubResource( 2 )
 
 [node name="LevelsButton" type="Button" parent="Menu/Panel/MainPanel"]
 margin_left = 90.0
-margin_top = 252.0
+margin_top = 318.0
 margin_right = 390.0
-margin_bottom = 602.0
+margin_bottom = 471.0
 size_flags_vertical = 7
-text = "START"
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
+text = "PLAY"
 
 [node name="OptionsContainer" type="HBoxContainer" parent="Menu/Panel/MainPanel"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -86.0
+margin_top = -126.0
 custom_constants/separation = 60
 alignment = 1
 
 [node name="SoundButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
-margin_left = 66.0
-margin_top = 8.0
-margin_right = 142.0
-margin_bottom = 78.0
+margin_left = 60.0
+margin_top = 23.0
+margin_right = 140.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
 toggle_mode = true
 icon = ExtResource( 7 )
 
 [node name="InfoButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
-margin_left = 202.0
-margin_top = 8.0
-margin_right = 278.0
-margin_bottom = 78.0
+margin_left = 200.0
+margin_top = 23.0
+margin_right = 280.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
 icon = ExtResource( 9 )
 
 [node name="BuyButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
-margin_left = 338.0
-margin_top = 8.0
-margin_right = 414.0
-margin_bottom = 78.0
+margin_left = 340.0
+margin_top = 23.0
+margin_right = 420.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
 icon = ExtResource( 8 )
 
 [node name="LevelPanel" type="Control" parent="Menu/Panel"]
@@ -157,9 +188,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -152.0
-margin_top = -308.0
-margin_right = 152.0
-margin_bottom = 333.0
+margin_top = -320.5
+margin_right = 148.0
+margin_bottom = 329.5
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 5
