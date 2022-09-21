@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Objects/Teleporter.tscn" type="PackedScene" id=9]
+
+[node name="Level_10" type="Node2D"]
+script = ExtResource( 7 )
+level_name = "Level_10"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -393227, 30, 0, -393226, 33, 0, -393225, 33, 0, -393224, 33, 0, -393223, 33, 0, -393222, 33, 0, -393221, 33, 0, -393220, 33, 0, -393219, 33, 0, -393218, 33, 0, -393217, 33, 0, -458752, 33, 0, -458751, 33, 0, -458750, 33, 0, -458749, 31, 0, -327691, 26, 0, -393213, 24, 0, -262155, 26, 0, -327677, 24, 0, -196619, 38, 0, -196618, 17, 0, -196617, 17, 0, -196616, 17, 0, -196615, 17, 0, -196614, 17, 0, -196613, 17, 0, -196612, 17, 0, -196611, 17, 0, -196610, 17, 0, -196609, 17, 0, -262144, 18, 0, -262141, 24, 0, -131078, 30, 0, -131077, 33, 0, -131076, 33, 0, -131075, 33, 0, -131074, 33, 0, -131073, 33, 0, -196608, 34, 0, -196605, 24, 0, -65542, 26, 0, -131069, 24, 0, -6, 26, 0, -65533, 24, 0, 65530, 26, 0, 65534, 16, 0, 65535, 17, 0, 0, 17, 0, 1, 17, 0, 2, 17, 0, 3, 39, 0, 131066, 26, 0, 131070, 24, 0, 196597, 30, 0, 196598, 33, 0, 196599, 33, 0, 196600, 33, 0, 196601, 33, 0, 196602, 34, 0, 196606, 32, 0, 196607, 33, 0, 131072, 33, 0, 131073, 33, 0, 131074, 33, 0, 131075, 31, 0, 131077, 30, 0, 131078, 33, 0, 131079, 33, 0, 131080, 33, 0, 131081, 31, 0, 262133, 26, 0, 196611, 24, 0, 196613, 26, 0, 196617, 24, 0, 196619, 30, 0, 196620, 33, 0, 196621, 33, 0, 196622, 31, 0, 327669, 26, 0, 262147, 24, 0, 262149, 26, 0, 262153, 24, 0, 262155, 26, 0, 262158, 24, 0, 393205, 26, 0, 327683, 24, 0, 327685, 26, 0, 327689, 24, 0, 327691, 26, 0, 327694, 24, 0, 458741, 38, 0, 458742, 17, 0, 458743, 17, 0, 458744, 17, 0, 458745, 17, 0, 458746, 18, 0, 458750, 16, 0, 458751, 17, 0, 393216, 17, 0, 393217, 17, 0, 393218, 17, 0, 393219, 39, 0, 393221, 26, 0, 393225, 24, 0, 393227, 26, 0, 393230, 24, 0, 524282, 26, 0, 524286, 24, 0, 458757, 26, 0, 458761, 24, 0, 458763, 26, 0, 458766, 24, 0, 589818, 26, 0, 589822, 24, 0, 524293, 26, 0, 524297, 24, 0, 524299, 26, 0, 524302, 24, 0, 655354, 26, 0, 655358, 24, 0, 589829, 26, 0, 589833, 24, 0, 589835, 26, 0, 589838, 24, 0, 720890, 26, 0, 720894, 32, 0, 720895, 33, 0, 655360, 33, 0, 655361, 33, 0, 655362, 33, 0, 655363, 33, 0, 655364, 33, 0, 655365, 34, 0, 655369, 24, 0, 655371, 26, 0, 655374, 24, 0, 786426, 26, 0, 720905, 24, 0, 720907, 26, 0, 720910, 24, 0, 851962, 26, 0, 786441, 24, 0, 786443, 26, 0, 786446, 24, 0, 917498, 26, 0, 851977, 24, 0, 851979, 26, 0, 851982, 24, 0, 983034, 38, 0, 983035, 17, 0, 983036, 17, 0, 983037, 17, 0, 983038, 17, 0, 983039, 17, 0, 917504, 17, 0, 917505, 17, 0, 917506, 17, 0, 917507, 17, 0, 917508, 17, 0, 917509, 18, 0, 917513, 24, 0, 917515, 38, 0, 917516, 17, 0, 917517, 17, 0, 917518, 39, 0, 983045, 26, 0, 983049, 24, 0, 1048579, 30, 0, 1048580, 33, 0, 1048581, 34, 0, 1048585, 32, 0, 1048586, 33, 0, 1048587, 31, 0, 1114115, 26, 0, 1114123, 24, 0, 1179651, 26, 0, 1179659, 24, 0, 1245187, 26, 0, 1245195, 24, 0, 1310723, 26, 0, 1310731, 24, 0, 1376259, 26, 0, 1376267, 24, 0, 1441795, 26, 0, 1441803, 24, 0, 1507331, 26, 0, 1507339, 24, 0, 1572867, 26, 0, 1572875, 24, 0, 1638403, 38, 0, 1638404, 17, 0, 1638405, 17, 0, 1638406, 17, 0, 1638407, 17, 0, 1638408, 17, 0, 1638409, 17, 0, 1638410, 17, 0, 1638411, 39, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 240, 752 )
+
+[node name="EndLevel" parent="." instance=ExtResource( 5 )]
+position = Vector2( -288, -160 )
+
+[node name="Teleporter" parent="." instance=ExtResource( 9 )]
+position = Vector2( 240, 144 )
+arrivalPoint = NodePath("../Teleporter2")
+
+[node name="Teleporter3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 64, 144 )
+arrivalPoint = NodePath("../Teleporter4")
+
+[node name="Teleporter4" parent="." instance=ExtResource( 9 )]
+position = Vector2( -288, 144 )
+arrivalPoint = NodePath("../Teleporter3")
+
+[node name="Teleporter2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 416, 416 )
+arrivalPoint = NodePath("../Teleporter")
+
+[node name="Bumper4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 240, 296 )
+
+[node name="Bumper5" parent="." instance=ExtResource( 4 )]
+position = Vector2( -208, 144 )
+
+[node name="BlocksBLu" type="Node" parent="."]
+
+[node name="Interruptor" parent="BlocksBLu" instance=ExtResource( 6 )]
+position = Vector2( 416, 160 )
+color = Color( 0, 0.486275, 1, 1 )
+listBlocks = [ NodePath("../Block4"), NodePath("../Block5"), NodePath("../Block6") ]
+
+[node name="Block4" parent="BlocksBLu" instance=ExtResource( 3 )]
+position = Vector2( 176, 432 )
+color = Color( 0, 0.486275, 1, 1 )
+
+[node name="Block5" parent="BlocksBLu" instance=ExtResource( 3 )]
+position = Vector2( 176, 400 )
+color = Color( 0, 0.486275, 1, 1 )
+
+[node name="Block6" parent="BlocksBLu" instance=ExtResource( 3 )]
+position = Vector2( 176, 368 )
+color = Color( 0, 0.486275, 1, 1 )
+
+[node name="BlocksBLu2" type="Node" parent="."]
+
+[node name="Block4" parent="BlocksBLu2" instance=ExtResource( 3 )]
+position = Vector2( -16, -48 )
+color = Color( 0, 0.486275, 1, 1 )
+
+[node name="Block5" parent="BlocksBLu2" instance=ExtResource( 3 )]
+position = Vector2( -16, -16 )
+color = Color( 0, 0.486275, 1, 1 )
+
+[node name="Block6" parent="BlocksBLu2" instance=ExtResource( 3 )]
+position = Vector2( -16, -176 )
+color = Color( 0, 0.486275, 1, 1 )
+isVisible = false
+
+[node name="Block7" parent="BlocksBLu2" instance=ExtResource( 3 )]
+position = Vector2( -16, -144 )
+color = Color( 0, 0.486275, 1, 1 )
+isVisible = false
+
+[node name="Interruptor2" parent="BlocksBLu2" instance=ExtResource( 6 )]
+position = Vector2( -112, 144 )
+color = Color( 0, 0.486275, 1, 1 )
+listBlocks = [ NodePath("../Block4"), NodePath("../Block5"), NodePath("../Block6"), NodePath("../Block7") ]
+
+[node name="InGameUI" parent="." instance=ExtResource( 8 )]
