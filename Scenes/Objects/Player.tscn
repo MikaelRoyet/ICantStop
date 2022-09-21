@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Objects/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Objects/Player.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Objects/SwipeDetector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/NeonTrail.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Objects/Camera2D.gd" type="Script" id=5]
 
 [sub_resource type="Shader" id=2]
@@ -76,6 +75,19 @@ shader_param/outline_colour = Plane( 0, 0, 0, 1 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13, 13 )
 
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 0.247059, 1, 0, 0.392157, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 5 )
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
 
@@ -95,8 +107,11 @@ NOISE_SHAKE_SPEED = 40.0
 NOISE_SHAKE_STRENGTH = 45.0
 SHAKE_DECAY_RATE = 12.5
 
-[node name="Trail" parent="." instance=ExtResource( 4 )]
-position = Vector2( 40, 56 )
-targetPath = NodePath("..")
+[node name="Trail" type="Particles2D" parent="."]
+amount = 10
+speed_scale = 2.0
+local_coords = false
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )
 
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]
