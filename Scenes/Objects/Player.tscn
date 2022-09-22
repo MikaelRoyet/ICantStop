@@ -1,76 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Objects/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Objects/Player.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/Player.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Objects/SwipeDetector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Player/AnimDash-Sheet.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Objects/Camera2D.gd" type="Script" id=5]
-
-[sub_resource type="Shader" id=2]
-code = "shader_type canvas_item;
-
-uniform float max_line_width = 10.0;
-uniform float min_line_width = 5.0;
-uniform float freq = 1.0;
-uniform float block_size = 20.0;
-uniform vec4 outline_colour = vec4(0,0,0,1);
-
-const float pi = 3.1415;
-const int ang_res = 16;
-
-
-float hash(vec2 p, float s) {
-	return fract(35.1 * sin(dot(vec3(112.3, 459.2, 753.2), vec3(p, s))));
-}
-
-float noise(vec2 p, float s) {
-	vec2 d = vec2(0, 1);
-	vec2 b = floor(p);
-	vec2 f = fract(p);
-	return mix(
-		mix(hash(b + d.xx, s), hash(b + d.yx, s), f.x),
-		mix(hash(b + d.xy, s), hash(b + d.yy, s), f.x), f.y);
-}
-
-float get_line_width(vec2 p, float s) {
-	p /= block_size;
-	float w = 0.0;
-	float intensity = 1.0;
-	for (int i = 0; i < 3; i++) {
-		w = mix(w, noise(p, s), intensity);
-		p /= 2.0;
-		intensity /= 2.0;
-	}
-	
-	return mix(max_line_width, min_line_width, w);
-}
-
-void fragment() {
-
-	float alpha = 0.0;
-	float timeStep = floor(TIME * freq);
-	vec2 scale = TEXTURE_PIXEL_SIZE;
-	scale *= get_line_width(UV / TEXTURE_PIXEL_SIZE, timeStep);
-	for (int i = 0; i < ang_res; i++) {
-		float angle = 2.0 * pi * float(i) / float(ang_res);
-		vec2 disp = scale * vec2(cos(angle), sin(angle));
-		alpha += texture(TEXTURE, UV + disp).a;
-	}
-	
-	if ((alpha > 0.0) && (texture(TEXTURE, UV).a < 0.1)) {
-		COLOR = outline_colour;
-	}
-	else {
-		COLOR = texture(TEXTURE, UV);
-	}
-}"
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-shader_param/max_line_width = 10.0
-shader_param/min_line_width = 5.0
-shader_param/freq = 1.0
-shader_param/block_size = 20.0
-shader_param/outline_colour = Plane( 0, 0, 0, 1 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13, 13 )
@@ -88,12 +22,41 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color_ramp = SubResource( 5 )
 
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 40, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 80, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 120, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": false,
+"name": "Dash",
+"speed": 24.0
+} ]
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 3 )
-texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -113,5 +76,9 @@ speed_scale = 2.0
 local_coords = false
 process_material = SubResource( 6 )
 texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 11 )
+animation = "Dash"
 
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]

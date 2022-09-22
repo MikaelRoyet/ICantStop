@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 const SPEED = GameManager.SPEED
-onready var sprite = $Sprite
 onready var trail = $Trail
 onready var camera = $Camera2D
+onready var animatedSprite = $AnimatedSprite
 var speedModifier
 var velocityPlayer
 var idle = true
@@ -40,18 +40,22 @@ func _on_SwipeDetector_swiped(direction):
 	#UP
 	if direction.x == 0 and direction.y == -1:
 		setMovement(Vector2(0, SPEED))
+		rotation_degrees = 180
 	
 	#DOWN
 	if direction.x == 0 and direction.y == 1:
 		setMovement(Vector2(0, -SPEED))
+		rotation_degrees = 0
 		
 	#LEFT
 	if direction.x == -1 and direction.y == 0:
 		setMovement(Vector2(SPEED, 0))
+		rotation_degrees = 90
 		
 	#RIGHT
 	if direction.x == 1 and direction.y == 0:
 		setMovement(Vector2(-SPEED, 0))
+		rotation_degrees = 270
 	
 #Fonction exécutée quand le joueur perd
 func death():
@@ -61,7 +65,7 @@ func death():
 		isDead = true
 		GameManager.createParticle(deathParticle, position)
 		camera.apply_noise_shake()
-		sprite.visible = false
+		animatedSprite.visible = false
 		trail.visible = false
 		GameManager.wait(0.3, "reset", self)
 
@@ -79,10 +83,14 @@ func setMovement(movement):
 		lastMovement = movement
 		velocityPlayer = movement * speedModifier
 		idle = false
+		animatedSprite.play("Dash")
+		
+
 
 #Inverse le mouvement du joueur
 func bounce():
 	setMovement(lastMovement * -1)
+	rotation_degrees += 180
 
 #Téléporte le joueur à un point donné
 func moveToPoint(point):
