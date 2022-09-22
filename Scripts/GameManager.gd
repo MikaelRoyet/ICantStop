@@ -63,9 +63,10 @@ func resetLevel():
 	currentLevel.emitSignalLevel()
 
 #Créer une particule et lance son émission à une position donné
-func createParticle(particle, position):
+func createParticle(particle, position, rotation):
 		var iParticle = particle.instance()
 		get_tree().root.add_child(iParticle)
+		iParticle.rotation_degrees = rotation
 		iParticle.position = position
 		iParticle.restart()
 

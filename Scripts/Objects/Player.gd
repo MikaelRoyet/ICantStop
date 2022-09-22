@@ -12,6 +12,7 @@ var respawnPoint
 var lastMovement
 
 var deathParticle = load("res://Scenes/Particles/DeathParticle.tscn")
+var dashParticle = load("res://Scenes/Particles/DashParticle.tscn")
 
 func _ready():
 	respawnPoint = position
@@ -41,21 +42,25 @@ func _on_SwipeDetector_swiped(direction):
 	if direction.x == 0 and direction.y == -1:
 		setMovement(Vector2(0, SPEED))
 		rotation_degrees = 180
+		GameManager.createParticle(dashParticle, position, rotation_degrees)
 	
 	#DOWN
 	if direction.x == 0 and direction.y == 1:
 		setMovement(Vector2(0, -SPEED))
 		rotation_degrees = 0
+		GameManager.createParticle(dashParticle, position, rotation_degrees)
 		
 	#LEFT
 	if direction.x == -1 and direction.y == 0:
 		setMovement(Vector2(SPEED, 0))
 		rotation_degrees = 90
+		GameManager.createParticle(dashParticle, position, rotation_degrees)
 		
 	#RIGHT
 	if direction.x == 1 and direction.y == 0:
 		setMovement(Vector2(-SPEED, 0))
 		rotation_degrees = 270
+		GameManager.createParticle(dashParticle, position, rotation_degrees)
 	
 #Fonction exécutée quand le joueur perd
 func death():
@@ -63,7 +68,7 @@ func death():
 		print("DEADGE")
 		idle = true
 		isDead = true
-		GameManager.createParticle(deathParticle, position)
+		GameManager.createParticle(deathParticle, position, rotation_degrees)
 		camera.apply_noise_shake()
 		animatedSprite.visible = false
 		trail.visible = false
@@ -84,6 +89,7 @@ func setMovement(movement):
 		velocityPlayer = movement * speedModifier
 		idle = false
 		animatedSprite.play("Dash")
+
 		
 
 
@@ -91,6 +97,7 @@ func setMovement(movement):
 func bounce():
 	setMovement(lastMovement * -1)
 	rotation_degrees += 180
+	GameManager.createParticle(dashParticle, position, rotation_degrees)
 
 #Téléporte le joueur à un point donné
 func moveToPoint(point):

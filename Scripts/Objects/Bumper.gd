@@ -31,7 +31,7 @@ func _physics_process(delta):
 func move(movement):
 	velocityBumper = movement
 	lastMovement = movement
-	GameManager.createParticle(particleBounce, position)
+	GameManager.createParticle(particleBounce, position, rotation_degrees)
 
 
 func bounce():
