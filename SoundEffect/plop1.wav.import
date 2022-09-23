@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plop1.wav-4fa78358ebc62bef2e173c6f870a435f.sample"
+
+[deps]
+
+source_file="res://SoundEffect/plop1.wav"
+dest_files=[ "res://.import/plop1.wav-4fa78358ebc62bef2e173c6f870a435f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

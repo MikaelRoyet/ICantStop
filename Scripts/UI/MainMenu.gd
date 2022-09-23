@@ -9,6 +9,7 @@ onready var LevelPanel : = $Panel/LevelPanel
 onready var Title : = $Panel/MainPanel/Title
 onready var animTitle = $Panel/MainPanel/Title/TitleAnimationPlayer
 onready var soundBtn : = $Panel/MainPanel/OptionsContainer/SoundButton
+onready var soundEffectPlayer : = $SoundEffectPlayer
 onready var iconSound : = preload("res://Sprites/UI/img/soundOn.png")
 onready var iconMuted : = preload("res://Sprites/UI/img/soundMuted.png")
 
@@ -30,7 +31,7 @@ func _ready():
 func _on_LevelsButton_pressed():
 	MainPanel.visible = false
 	LevelPanel.visible = true
-	print("levels")
+	playSoundOnUIClick()
 	refreshLevel()
 
 
@@ -38,6 +39,7 @@ func _on_LevelsButton_pressed():
 func _on_LevelButtonReturn_pressed():
 	LevelPanel.visible = false
 	MainPanel.visible = true
+	playSoundOnUIClick()
 
 
 
@@ -54,6 +56,7 @@ func createButtonLevels():
 #MLance le niveau correspondant au bouton
 func on_levelButton_pressed(scene):
 	GameManager.presentLevel = scene
+	playSoundOnUIClick()
 	emit_signal("level_changed", "res://Scenes/Levels/" + scene)
 	
 	
@@ -75,7 +78,13 @@ func refreshLevel():
 func _on_SoundButton_toggled(button_pressed):
 	if button_pressed :
 		soundBtn.icon = iconMuted
+		soundEffectPlayer.pause_mode = true
 		# TODO je coupe le son
 	else :
 		soundBtn.icon = iconSound
+		soundEffectPlayer.pause_mode = false
+		playSoundOnUIClick()
 		#TODO et je remet le son
+
+func playSoundOnUIClick():
+	soundEffectPlayer.play()

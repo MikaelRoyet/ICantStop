@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/img/ArrowBack.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Sprites/UI/img/info.png" type="Texture" id=9]
 [ext_resource path="res://Fonts/pixeled52.tres" type="DynamicFont" id=10]
 [ext_resource path="res://UI_Styles/PlayButtonStyle.tres" type="StyleBox" id=11]
+[ext_resource path="res://SoundEffect/plop2.wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -196,6 +197,10 @@ size_flags_vertical = 3
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 5
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="Menu"]
+stream = ExtResource( 12 )
+volume_db = -10.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Menu/Panel/MainPanel/LevelsButton" to="Menu" method="_on_LevelsButton_pressed"]
