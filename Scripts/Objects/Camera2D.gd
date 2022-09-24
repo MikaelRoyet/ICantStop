@@ -24,7 +24,10 @@ func _ready() -> void:
 	# Period affects how quickly the noise changes values
 	noise.period = 2
 
-func apply_noise_shake() -> void:
+func apply_noise_shake(noiseShakeSpeed, noiseShakeStrength, ShakeDecayRate) -> void:
+	NOISE_SHAKE_SPEED = noiseShakeSpeed
+	NOISE_SHAKE_STRENGTH = noiseShakeStrength
+	SHAKE_DECAY_RATE = ShakeDecayRate;
 	shake_strength = NOISE_SHAKE_STRENGTH
 
 func _process(delta: float) -> void:

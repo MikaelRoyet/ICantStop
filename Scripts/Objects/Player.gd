@@ -14,6 +14,7 @@ var lastMovement
 var deathParticle = load("res://Scenes/Particles/DeathParticle.tscn")
 var dashParticle = load("res://Scenes/Particles/DashParticle.tscn")
 
+
 func _ready():
 	respawnPoint = position
 	velocityPlayer = Vector2(0,0)
@@ -69,7 +70,7 @@ func death():
 		idle = true
 		isDead = true
 		GameManager.createParticle(deathParticle, position, rotation_degrees)
-		camera.apply_noise_shake()
+		camera.apply_noise_shake(30, 60, 5)
 		animatedSprite.visible = false
 		trail.visible = false
 		GameManager.wait(0.3, "reset", self)
@@ -89,6 +90,7 @@ func setMovement(movement):
 		velocityPlayer = movement * speedModifier
 		idle = false
 		animatedSprite.play("Dash")
+		camera.apply_noise_shake(5, 5, 1)
 
 		
 
@@ -98,6 +100,7 @@ func bounce():
 	setMovement(lastMovement * -1)
 	rotation_degrees += 180
 	GameManager.createParticle(dashParticle, position, rotation_degrees)
+	camera.apply_noise_shake(10, 15, 3)
 
 #Téléporte le joueur à un point donné
 func moveToPoint(point):
