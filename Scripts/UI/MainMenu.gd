@@ -6,9 +6,10 @@ signal level_changed(level_name)
 
 onready var MainPanel : = $Panel/MainPanel
 onready var LevelPanel : = $Panel/LevelPanel
+onready var InfoPanel : = $Panel/InfoPanel
 onready var Title : = $Panel/MainPanel/Title
 onready var animTitle = $Panel/MainPanel/Title/TitleAnimationPlayer
-onready var soundBtn : = $Panel/MainPanel/OptionsContainer/SoundButton
+onready var soundBtn : = $Panel/OptionsContainer/SoundButton
 onready var soundEffectPlayer : = $SoundEffectPlayer
 onready var iconSound : = preload("res://Sprites/UI/img/soundOn.png")
 onready var iconMuted : = preload("res://Sprites/UI/img/soundMuted.png")
@@ -24,6 +25,7 @@ func _ready():
 	GameManager.setLevel(self)
 	levelDatas = GameManager.levelDataDict
 	LevelPanel.visible = false
+	InfoPanel.visible = false
 	generateLevels()
 
 
@@ -31,14 +33,23 @@ func _ready():
 func _on_LevelsButton_pressed():
 	MainPanel.visible = false
 	LevelPanel.visible = true
+	InfoPanel.visible = false
 	playSoundOnUIClick()
 	refreshLevel()
 
+
+func _on_InfoButton_pressed():
+	MainPanel.visible = false
+	LevelPanel.visible = false
+	InfoPanel.visible = true
+	playSoundOnUIClick()
+	refreshLevel()
 
 #Reviens  au menu principal
 func _on_LevelButtonReturn_pressed():
 	LevelPanel.visible = false
 	MainPanel.visible = true
+	InfoPanel.visible = false
 	playSoundOnUIClick()
 
 

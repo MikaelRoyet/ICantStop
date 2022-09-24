@@ -66,7 +66,6 @@ func _on_SwipeDetector_swiped(direction):
 #Fonction exécutée quand le joueur perd
 func death():
 	if !idle :
-		print("DEADGE")
 		idle = true
 		isDead = true
 		GameManager.createParticle(deathParticle, position, rotation_degrees)
@@ -78,7 +77,6 @@ func death():
 	
 #Appelle le Reset le niveau
 func reset():
-	print("RESETGE")
 	GameManager.resetLevel()
 	#moveToPoint(respawnPoint)
 	#speedModifier = 1
@@ -90,7 +88,7 @@ func setMovement(movement):
 		velocityPlayer = movement * speedModifier
 		idle = false
 		animatedSprite.play("Dash")
-		camera.apply_noise_shake(5, 5, 1)
+		camera.apply_noise_shake(5, 5, 10)
 
 		
 
@@ -100,7 +98,7 @@ func bounce():
 	setMovement(lastMovement * -1)
 	rotation_degrees += 180
 	GameManager.createParticle(dashParticle, position, rotation_degrees)
-	camera.apply_noise_shake(10, 15, 3)
+	camera.apply_noise_shake(15, 20, 10)
 
 #Téléporte le joueur à un point donné
 func moveToPoint(point):

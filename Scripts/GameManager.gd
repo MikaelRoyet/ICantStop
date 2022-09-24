@@ -96,13 +96,14 @@ func setPathForLevelName(levelName):
 func goToMainMenu():
 	currentLevel.emitSignalMenu()
 
-
+#Sauvegarde la progression du joueur à chaque niveau terminé
 func saveGame():
 	var save_game = File.new()
 	save_game.open(LEVEL_SAVE, File.WRITE)
 	save_game.store_line(to_json(levelSaveDict))
 	save_game.close()
 
+#Débloque le niveau suivant quand un niveau est terminé
 func unlockLevel(level_name):
 	levelSaveDict[levelDataDict[level_name]["nextLevel"]] = 1
 	saveGame()

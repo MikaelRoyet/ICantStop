@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/img/ArrowBack.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Fonts/pixeled52.tres" type="DynamicFont" id=10]
 [ext_resource path="res://UI_Styles/PlayButtonStyle.tres" type="StyleBox" id=11]
 [ext_resource path="res://SoundEffect/plop2.wav" type="AudioStream" id=12]
+[ext_resource path="res://Fonts/pixeled50.tres" type="DynamicFont" id=13]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.054902, 0.0235294, 0, 1 )
@@ -60,7 +61,7 @@ tracks/0/keys = {
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
-ambient_light_color = Color( 1, 0.439216, 0, 1 )
+auto_exposure_scale = 64.0
 glow_enabled = true
 glow_levels/1 = true
 glow_levels/5 = false
@@ -131,60 +132,6 @@ custom_styles/disabled = ExtResource( 11 )
 custom_styles/normal = ExtResource( 11 )
 text = "PLAY"
 
-[node name="OptionsContainer" type="HBoxContainer" parent="Menu/Panel/MainPanel"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -126.0
-custom_constants/separation = 60
-alignment = 1
-
-[node name="SoundButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
-margin_left = 60.0
-margin_top = 23.0
-margin_right = 140.0
-margin_bottom = 103.0
-rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/hover = ExtResource( 11 )
-custom_styles/pressed = ExtResource( 11 )
-custom_styles/focus = ExtResource( 11 )
-custom_styles/disabled = ExtResource( 11 )
-custom_styles/normal = ExtResource( 11 )
-toggle_mode = true
-icon = ExtResource( 7 )
-
-[node name="InfoButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
-margin_left = 200.0
-margin_top = 23.0
-margin_right = 280.0
-margin_bottom = 103.0
-rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/hover = ExtResource( 11 )
-custom_styles/pressed = ExtResource( 11 )
-custom_styles/focus = ExtResource( 11 )
-custom_styles/disabled = ExtResource( 11 )
-custom_styles/normal = ExtResource( 11 )
-icon = ExtResource( 9 )
-
-[node name="BuyButton" type="Button" parent="Menu/Panel/MainPanel/OptionsContainer"]
-margin_left = 340.0
-margin_top = 23.0
-margin_right = 420.0
-margin_bottom = 103.0
-rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/hover = ExtResource( 11 )
-custom_styles/pressed = ExtResource( 11 )
-custom_styles/focus = ExtResource( 11 )
-custom_styles/disabled = ExtResource( 11 )
-custom_styles/normal = ExtResource( 11 )
-icon = ExtResource( 8 )
-
 [node name="LevelPanel" type="Control" parent="Menu/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -224,6 +171,105 @@ custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 5
 
+[node name="InfoPanel" type="Control" parent="Menu/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="LevelHeader" type="HBoxContainer" parent="Menu/Panel/InfoPanel"]
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -396.0
+margin_bottom = 84.0
+custom_constants/separation = 75
+
+[node name="LevelButtonReturn" type="Button" parent="Menu/Panel/InfoPanel/LevelHeader"]
+margin_right = 64.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+icon = ExtResource( 2 )
+expand_icon = true
+
+[node name="TextInfo" type="RichTextLabel" parent="Menu/Panel/InfoPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -205.0
+margin_top = -296.0
+margin_right = 215.0
+margin_bottom = 282.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 13 )
+text = "Thanks for downloading the game !
+
+You can move by swapping left, right, up or down. That's pretty all about it, i don't want to spoil you the rest of the game. Good luck !
+
+(You can avoid ad by buying the game)
+
+Game is better with 'plop' sound effect
+- Aerkaos"
+
+[node name="OptionsContainer" type="HBoxContainer" parent="Menu/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -126.0
+custom_constants/separation = 60
+alignment = 1
+
+[node name="SoundButton" type="Button" parent="Menu/Panel/OptionsContainer"]
+margin_left = 60.0
+margin_top = 23.0
+margin_right = 140.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
+toggle_mode = true
+icon = ExtResource( 7 )
+
+[node name="InfoButton" type="Button" parent="Menu/Panel/OptionsContainer"]
+margin_left = 200.0
+margin_top = 23.0
+margin_right = 280.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
+icon = ExtResource( 9 )
+
+[node name="BuyButton" type="Button" parent="Menu/Panel/OptionsContainer"]
+margin_left = 340.0
+margin_top = 23.0
+margin_right = 420.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
+icon = ExtResource( 8 )
+
 [node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource( 12 )
 volume_db = -10.0
@@ -233,5 +279,7 @@ environment = SubResource( 3 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Menu/Panel/MainPanel/LevelsButton" to="Menu" method="_on_LevelsButton_pressed"]
-[connection signal="toggled" from="Menu/Panel/MainPanel/OptionsContainer/SoundButton" to="Menu" method="_on_SoundButton_toggled"]
 [connection signal="pressed" from="Menu/Panel/LevelPanel/LevelHeader/LevelButtonReturn" to="Menu" method="_on_LevelButtonReturn_pressed"]
+[connection signal="pressed" from="Menu/Panel/InfoPanel/LevelHeader/LevelButtonReturn" to="Menu" method="_on_LevelButtonReturn_pressed"]
+[connection signal="toggled" from="Menu/Panel/OptionsContainer/SoundButton" to="Menu" method="_on_SoundButton_toggled"]
+[connection signal="pressed" from="Menu/Panel/OptionsContainer/InfoButton" to="Menu" method="_on_InfoButton_pressed"]
