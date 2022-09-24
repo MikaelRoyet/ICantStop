@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/img/ArrowBack.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Fonts/pixeled52.tres" type="DynamicFont" id=10]
 [ext_resource path="res://UI_Styles/PlayButtonStyle.tres" type="StyleBox" id=11]
 [ext_resource path="res://SoundEffect/plop2.wav" type="AudioStream" id=12]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.054902, 0.0235294, 0, 1 )
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -45,6 +48,27 @@ tracks/0/keys = {
 "values": [ Vector2( -48, 56 ), Vector2( -48, 84 ), Vector2( -48, 56 ) ]
 }
 
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+ambient_light_color = Color( 1, 0.439216, 0, 1 )
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/5 = false
+glow_intensity = 0.25
+glow_bloom = 0.25
+glow_blend_mode = 1
+adjustment_enabled = true
+
 [node name="SceneSwitcher" type="Node"]
 script = ExtResource( 3 )
 
@@ -56,9 +80,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 method_call_mode = 1
@@ -73,6 +94,7 @@ script = ExtResource( 1 )
 [node name="Panel" type="Panel" parent="Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_styles/panel = SubResource( 4 )
 
 [node name="MainPanel" type="Control" parent="Menu/Panel"]
 anchor_right = 1.0
@@ -169,19 +191,20 @@ anchor_bottom = 1.0
 
 [node name="LevelHeader" type="HBoxContainer" parent="Menu/Panel/LevelPanel"]
 anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
 margin_bottom = 38.0
 custom_constants/separation = 75
 
 [node name="LevelButtonReturn" type="Button" parent="Menu/Panel/LevelPanel/LevelHeader"]
-margin_right = 44.0
-margin_bottom = 38.0
+margin_right = 32.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 icon = ExtResource( 2 )
-
-[node name="LevelTitle" type="TextureRect" parent="Menu/Panel/LevelPanel/LevelHeader"]
-margin_left = 119.0
-margin_right = 480.0
-margin_bottom = 38.0
-size_flags_horizontal = 3
 
 [node name="LevelContainer" type="GridContainer" parent="Menu/Panel/LevelPanel"]
 anchor_left = 0.5
@@ -201,6 +224,9 @@ columns = 5
 [node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource( 12 )
 volume_db = -10.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Menu/Panel/MainPanel/LevelsButton" to="Menu" method="_on_LevelsButton_pressed"]
