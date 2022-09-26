@@ -2,10 +2,6 @@ Idée level design :
 
 Level avec des rebonds de bumper
 
-Level avec un bumper qui rebondit sur  d'autres bumper et qui passe sur un interupteur
-Le joureur doit passer une barrière au bon moment
-
-Level avec des bumper qui passe dans des teleporter
 
 Level avec des moving blocs dangereux
 
@@ -31,17 +27,12 @@ apparition et disparition des blocs
 
 Autre :
 
-Comment refaire la trail ? avec shader ou line2D ?
 
-DEsign pour les boutons et le menu
--> faire un truc simple et applicable partout
 
 Faire des options (sounds)
 - activer/couper musique et soundfx
 
 (Faire la page de tuto)
-
-
 
 transition screen
 -Faire une vrai animation de transition rapide
@@ -50,12 +41,18 @@ transition screen
 
 Musique ? petite chiptune des familles ? synthwave un peu rapide ? 
 
+mise en place des pubs
+-> Mettre d'abord l'application sur le google play store (mais sans la laisser publique)
+
+Voir comment mettre à jour l'application facielement (pipeline jenkins?)
+
+
+
 Sound effects !!
 - bumper
 - death
 - interuptor
 - endlevel
-- clic UI (blop de gamedev tycoon)
 - teleporter
 - Acceleration
 - change direction (very soft)
