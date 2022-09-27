@@ -12,6 +12,7 @@ Level ou il faut faire passer un bloc bumper au bon moment entre des dangerous b
 
 Idée objets :
 
+moving blocks that bumps
 
 Dalle directionnelle
 
