@@ -15,7 +15,12 @@ func _ready():
 	movingToPoint()
 
 func _process(delta):
-
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision:
+			if collision.collider.is_in_group("Bumper"):
+				if collision.collider.has_method("move"):
+					collision.collider.move(collision.collider.lastMovement)
 	
 	if position.distance_to(get_node(listPoints[nextPoint]).position) < 1:
 		if(listPoints.size() > nextPoint + 1):
@@ -34,3 +39,6 @@ func movingToPoint():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func move(movement):
+	pass
