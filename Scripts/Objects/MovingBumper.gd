@@ -6,12 +6,13 @@ extends KinematicBody2D
 # var b = "text"
 export var listPoints = []
 export var isBoucle:bool
+export var startingPoint = 1
 var nextPoint
 var vector
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	nextPoint = 1
+	nextPoint = startingPoint
 	movingToPoint()
 
 func _process(delta):
@@ -20,7 +21,7 @@ func _process(delta):
 		if collision:
 			if collision.collider.is_in_group("Bumper"):
 				if collision.collider.has_method("move"):
-					collision.collider.move(collision.collider.lastMovement)
+					collision.collider.move(collision.collider.lastMovement * -1)
 	
 	if position.distance_to(get_node(listPoints[nextPoint]).position) < 1:
 		if(listPoints.size() > nextPoint + 1):
@@ -32,7 +33,7 @@ func _process(delta):
 				pass
 
 	vector = (get_node(listPoints[nextPoint]).position - position).normalized()
-	move_and_slide(vector * GameManager.SPEED * delta * 15)
+	move_and_slide(vector * GameManager.SPEED * delta * 30)
 
 func movingToPoint():
 	pass

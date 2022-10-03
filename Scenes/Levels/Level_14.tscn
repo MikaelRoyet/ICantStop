@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/MovingBumper.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=8]
 [ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=9]
-[ext_resource path="res://Scenes/Objects/AccelerationZone.tscn" type="PackedScene" id=10]
 
 [node name="Level_14" type="Node2D"]
 script = ExtResource( 8 )
@@ -18,48 +16,77 @@ tile_set = ExtResource( 9 )
 cell_size = Vector2( 32, 32 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 131077, 30, 0, 131078, 33, 0, 131079, 33, 0, 131080, 33, 0, 131081, 33, 0, 131082, 33, 0, 131083, 33, 0, 131084, 33, 0, 131085, 33, 0, 131086, 33, 0, 131087, 33, 0, 131088, 31, 0, 196613, 26, 0, 196624, 24, 0, 262149, 26, 0, 262160, 24, 0, 327685, 26, 0, 327696, 24, 0, 393221, 26, 0, 393232, 24, 0, 393234, 30, 0, 393235, 33, 0, 393236, 33, 0, 393237, 33, 0, 393238, 31, 0, 458757, 26, 0, 458761, 16, 0, 458762, 17, 0, 458763, 17, 0, 458764, 18, 0, 458768, 24, 0, 458770, 26, 0, 458774, 24, 0, 524293, 26, 0, 524297, 24, 0, 524300, 26, 0, 524304, 24, 0, 524306, 26, 0, 524310, 32, 0, 524311, 33, 0, 524312, 33, 0, 524313, 33, 0, 524314, 33, 0, 524315, 33, 0, 524316, 33, 0, 524317, 33, 0, 524318, 33, 0, 524319, 33, 0, 524320, 33, 0, 524321, 33, 0, 524322, 33, 0, 524323, 33, 0, 524324, 33, 0, 524325, 33, 0, 524326, 33, 0, 524327, 33, 0, 524328, 33, 0, 524329, 33, 0, 524330, 33, 0, 524331, 33, 0, 524332, 31, 0, 589829, 26, 0, 589833, 24, 0, 589836, 26, 0, 589840, 24, 0, 589842, 26, 0, 589868, 24, 0, 655365, 26, 0, 655369, 24, 0, 655372, 26, 0, 655376, 24, 0, 655378, 26, 0, 655404, 24, 0, 720901, 26, 0, 720905, 24, 0, 720908, 26, 0, 720912, 24, 0, 720914, 26, 0, 720918, 16, 0, 720919, 17, 0, 720920, 17, 0, 720921, 17, 0, 720922, 17, 0, 720923, 17, 0, 720924, 17, 0, 720925, 17, 0, 720926, 17, 0, 720927, 17, 0, 720928, 17, 0, 720929, 17, 0, 720930, 17, 0, 720931, 17, 0, 720932, 17, 0, 720933, 17, 0, 720934, 17, 0, 720935, 17, 0, 720936, 17, 0, 720937, 17, 0, 720938, 17, 0, 720939, 17, 0, 720940, 39, 0, 786437, 26, 0, 786441, 24, 0, 786444, 26, 0, 786448, 24, 0, 786450, 26, 0, 786454, 24, 0, 851973, 26, 0, 851977, 24, 0, 851980, 26, 0, 851984, 32, 0, 851985, 33, 0, 851986, 34, 0, 851990, 24, 0, 917509, 26, 0, 917513, 24, 0, 917516, 26, 0, 917526, 24, 0, 983045, 26, 0, 983049, 24, 0, 983052, 26, 0, 983062, 24, 0, 1048581, 26, 0, 1048585, 24, 0, 1048588, 26, 0, 1048598, 24, 0, 1114117, 26, 0, 1114121, 24, 0, 1114124, 38, 0, 1114125, 17, 0, 1114126, 17, 0, 1114127, 17, 0, 1114128, 17, 0, 1114129, 17, 0, 1114130, 17, 0, 1114131, 17, 0, 1114132, 17, 0, 1114133, 17, 0, 1114134, 39, 0, 1179650, 30, 0, 1179651, 33, 0, 1179652, 33, 0, 1179653, 34, 0, 1179657, 32, 0, 1179658, 33, 0, 1179659, 33, 0, 1179660, 31, 0, 1245186, 26, 0, 1245196, 24, 0, 1310722, 26, 0, 1310732, 24, 0, 1376258, 26, 0, 1376268, 24, 0, 1441794, 26, 0, 1441804, 24, 0, 1507330, 26, 0, 1507340, 24, 0, 1572866, 26, 0, 1572876, 24, 0, 1638402, 26, 0, 1638412, 24, 0, 1703938, 26, 0, 1703948, 24, 0, 1769474, 26, 0, 1769484, 24, 0, 1835010, 38, 0, 1835011, 17, 0, 1835012, 17, 0, 1835013, 17, 0, 1835014, 17, 0, 1835015, 17, 0, 1835016, 17, 0, 1835017, 17, 0, 1835018, 17, 0, 1835019, 17, 0, 1835020, 39, 0 )
+tile_data = PoolIntArray( -851959, 23, 0, -851958, 23, 0, -851957, 23, 0, -851956, 23, 0, -851955, 23, 0, -851954, 23, 0, -851953, 23, 0, -851952, 23, 0, -851951, 23, 0, -851950, 23, 0, -851949, 23, 0, -851948, 23, 0, -851947, 23, 0, -851946, 23, 0, -851945, 23, 0, -851944, 23, 0, -851943, 23, 0, -851942, 23, 0, -851941, 23, 0, -851940, 23, 0, -851939, 23, 0, -851938, 23, 0, -851937, 23, 0, -851936, 23, 0, -786423, 23, 0, -786400, 23, 0, -720887, 23, 0, -720864, 23, 0, -655351, 23, 0, -655328, 23, 0, -589815, 23, 0, -589810, 23, 0, -589809, 23, 0, -589808, 23, 0, -589807, 23, 0, -589792, 23, 0, -524279, 23, 0, -524274, 23, 0, -524271, 23, 0, -524256, 23, 0, -458743, 23, 0, -458738, 23, 0, -458735, 23, 0, -458720, 23, 0, -393216, 23, 0, -393215, 23, 0, -393214, 23, 0, -393213, 23, 0, -393212, 23, 0, -393211, 23, 0, -393210, 23, 0, -393209, 23, 0, -393208, 23, 0, -393207, 23, 0, -393202, 23, 0, -393199, 23, 0, -393184, 23, 0, -327680, 23, 0, -327666, 23, 0, -327663, 23, 0, -327648, 23, 0, -262144, 23, 0, -262130, 23, 0, -262127, 23, 0, -262112, 23, 0, -196608, 23, 0, -196594, 23, 0, -196591, 23, 0, -196576, 23, 0, -131072, 23, 0, -131058, 23, 0, -131055, 23, 0, -131040, 23, 0, -65536, 23, 0, -65522, 23, 0, -65519, 23, 0, -65504, 23, 0, 0, 23, 0, 14, 23, 0, 17, 23, 0, 32, 23, 0, 65536, 23, 0, 65550, 23, 0, 65553, 23, 0, 65568, 23, 0, 131072, 23, 0, 131086, 23, 0, 131089, 23, 0, 131104, 23, 0, 196608, 23, 0, 196622, 23, 0, 196625, 23, 0, 196640, 23, 0, 262144, 23, 0, 262158, 23, 0, 262161, 23, 0, 262176, 23, 0, 327680, 23, 0, 327694, 23, 0, 327697, 23, 0, 327698, 23, 0, 327699, 23, 0, 327700, 23, 0, 327701, 23, 0, 327702, 23, 0, 327707, 23, 0, 327708, 23, 0, 327709, 23, 0, 327710, 23, 0, 327711, 23, 0, 327712, 23, 0, 393216, 23, 0, 393230, 23, 0, 393238, 23, 0, 393243, 23, 0, 458752, 23, 0, 458766, 23, 0, 458774, 23, 0, 458779, 23, 0, 524288, 23, 0, 524302, 23, 0, 524310, 23, 0, 524315, 23, 0, 524316, 23, 0, 524317, 23, 0, 524318, 23, 0, 524319, 23, 0, 589824, 23, 0, 589838, 23, 0, 589846, 23, 0, 589855, 23, 0, 655360, 23, 0, 655374, 23, 0, 655382, 23, 0, 655391, 23, 0, 720896, 23, 0, 720897, 23, 0, 720898, 23, 0, 720899, 23, 0, 720900, 23, 0, 720901, 23, 0, 720905, 23, 0, 720906, 23, 0, 720907, 23, 0, 720908, 23, 0, 720909, 23, 0, 720910, 23, 0, 720918, 23, 0, 720919, 23, 0, 720920, 23, 0, 720921, 23, 0, 720922, 23, 0, 720923, 23, 0, 720924, 23, 0, 720925, 23, 0, 720926, 23, 0, 720927, 23, 0, 786437, 26, 0, 786441, 24, 0, 851973, 26, 0, 851977, 24, 0, 917509, 26, 0, 917513, 24, 0, 983045, 26, 0, 983049, 24, 0, 1048581, 26, 0, 1048585, 24, 0, 1114117, 26, 0, 1114121, 24, 0, 1179650, 30, 0, 1179651, 33, 0, 1179652, 33, 0, 1179653, 34, 0, 1179657, 32, 0, 1179658, 33, 0, 1179659, 33, 0, 1179660, 31, 0, 1245186, 26, 0, 1245196, 24, 0, 1310722, 26, 0, 1310732, 24, 0, 1376258, 26, 0, 1376268, 24, 0, 1441794, 26, 0, 1441804, 24, 0, 1507330, 26, 0, 1507340, 24, 0, 1572866, 26, 0, 1572876, 24, 0, 1638402, 26, 0, 1638412, 24, 0, 1703938, 26, 0, 1703948, 24, 0, 1769474, 26, 0, 1769484, 24, 0, 1835010, 38, 0, 1835011, 17, 0, 1835012, 17, 0, 1835013, 17, 0, 1835014, 17, 0, 1835015, 17, 0, 1835016, 17, 0, 1835017, 17, 0, 1835018, 17, 0, 1835019, 17, 0, 1835020, 39, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 752 )
 
 [node name="EndLevel" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1376, 320 )
+position = Vector2( 960, 320 )
 
 [node name="InGameUI" parent="." instance=ExtResource( 2 )]
 
-[node name="AccelerationZone" parent="." instance=ExtResource( 10 )]
-position = Vector2( 240, 448 )
-scale = Vector2( 3, 10 )
+[node name="MovingBumperNode" type="Node2D" parent="."]
 
-[node name="AccelerationZone2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 464, 384 )
-scale = Vector2( 3, 10 )
-
-[node name="AccelerationZone3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 656, 368 )
-scale = Vector2( 3, 5 )
-
-[node name="AccelerationZone4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1024, 320 )
-scale = Vector2( 20, 2 )
-
-[node name="Bumper" parent="." instance=ExtResource( 4 )]
-position = Vector2( 240, 792 )
-
-[node name="MovingBumper" parent="." instance=ExtResource( 3 )]
-position = Vector2( 160, 664 )
-listPoints = [ NodePath("../Node2D2"), NodePath("../Node2D"), NodePath("../Node2D3"), NodePath("../Node2D4") ]
+[node name="MovingBumper" parent="MovingBumperNode" instance=ExtResource( 3 )]
+position = Vector2( 48, 176 )
+listPoints = [ NodePath("../Node2D3"), NodePath("../Node2D") ]
 isBoucle = true
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 160, 824 )
+[node name="Node2D" type="Node2D" parent="MovingBumperNode"]
+position = Vector2( 48, 176 )
 
-[node name="Node2D3" type="Node2D" parent="."]
-position = Vector2( 336, 832 )
+[node name="Node2D3" type="Node2D" parent="MovingBumperNode"]
+position = Vector2( 432, 176 )
 
-[node name="Node2D4" type="Node2D" parent="."]
-position = Vector2( 336, 664 )
+[node name="MovingBumperNode2" type="Node2D" parent="."]
+position = Vector2( 0, -192 )
 
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2( 160, 664 )
+[node name="MovingBumper" parent="MovingBumperNode2" instance=ExtResource( 3 )]
+position = Vector2( 256, 176 )
+listPoints = [ NodePath("../Node2D3"), NodePath("../Node2D") ]
+isBoucle = true
+
+[node name="Node2D" type="Node2D" parent="MovingBumperNode2"]
+position = Vector2( 48, 176 )
+
+[node name="Node2D3" type="Node2D" parent="MovingBumperNode2"]
+position = Vector2( 432, 176 )
+
+[node name="MovingBumperNode3" type="Node2D" parent="."]
+position = Vector2( 560, -136 )
+
+[node name="MovingBumper" parent="MovingBumperNode3" instance=ExtResource( 3 )]
+position = Vector2( 64, -104 )
+listPoints = [ NodePath("../Node2D3"), NodePath("../Node2D"), NodePath("../Node2D4"), NodePath("../Node2D5") ]
+isBoucle = true
+
+[node name="MovingBumper2" parent="MovingBumperNode3" instance=ExtResource( 3 )]
+position = Vector2( 416, -104 )
+listPoints = [ NodePath("../Node2D3"), NodePath("../Node2D"), NodePath("../Node2D4"), NodePath("../Node2D5") ]
+isBoucle = true
+startingPoint = 2
+
+[node name="MovingBumper3" parent="MovingBumperNode3" instance=ExtResource( 3 )]
+position = Vector2( 416, 248 )
+listPoints = [ NodePath("../Node2D3"), NodePath("../Node2D"), NodePath("../Node2D4"), NodePath("../Node2D5") ]
+isBoucle = true
+startingPoint = 3
+
+[node name="MovingBumper4" parent="MovingBumperNode3" instance=ExtResource( 3 )]
+position = Vector2( 64, 248 )
+listPoints = [ NodePath("../Node2D3"), NodePath("../Node2D"), NodePath("../Node2D4"), NodePath("../Node2D5") ]
+isBoucle = true
+startingPoint = 0
+
+[node name="Node2D" type="Node2D" parent="MovingBumperNode3"]
+position = Vector2( 416, -104 )
+
+[node name="Node2D3" type="Node2D" parent="MovingBumperNode3"]
+position = Vector2( 64, -104 )
+
+[node name="Node2D4" type="Node2D" parent="MovingBumperNode3"]
+position = Vector2( 416, 248 )
+
+[node name="Node2D5" type="Node2D" parent="MovingBumperNode3"]
+position = Vector2( 64, 248 )
