@@ -6,6 +6,8 @@ onready var particleBounce = load("res://Scenes/Particles/ParticleBounce.tscn")
 
 var velocityBumper = Vector2(0,0)
 var lastMovement
+var bumpingPlayer = false
+var isMovingBumper = false
 
 export (Vector2) var directionStart = Vector2(0,0)
 
@@ -17,6 +19,16 @@ func _ready():
 
 func _physics_process(delta):
 	velocityBumper = move_and_slide(velocityBumper)
+	
+	var space_state = get_world_2d().direct_space_state
+	var result = space_state.intersect_ray(position, position + lastMovement, [self])
+	
+	if result:
+		print("Hit at point: ", result.collider.name)
+		if(result.collider.is_in_group("Player")):
+			bumpingPlayer = true
+		else:
+			bumpingPlayer = false
 	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)

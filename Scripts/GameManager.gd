@@ -108,4 +108,3 @@ func unlockLevel(level_name):
 	levelSaveDict[levelDataDict[level_name]["nextLevel"]] = 1
 	saveGame()
 
-

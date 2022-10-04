@@ -33,8 +33,23 @@ func _physics_process(delta):
 				death()
 			if collision.collider.is_in_group("Bumper"):
 				if collision.collider.has_method("move"):
-					collision.collider.move(lastMovement)
-					bounce()
+					print("colliosef", collision.collider.bumpingPlayer)
+					if(collision.collider.bumpingPlayer):
+						print("colliOUI")
+						if(collision.collider.isMovingBumper):
+							moveToPoint(position + collision.collider.lastMovement * 10)
+							setMovement(collision.collider.lastMovement * SPEED)
+							print("BUUUUUUMPP", collision.collider.lastMovement)
+						else:
+							setMovement(collision.collider.lastMovement)
+							collision.collider.move(collision.collider.lastMovement * -1)
+					else:
+						if(collision.collider.isMovingBumper):
+							bounce()
+						else:
+							collision.collider.move(lastMovement)
+							bounce()
+
 
 #Récupère la direction swiper par le joueur
 func _on_SwipeDetector_swiped(direction):
@@ -112,3 +127,8 @@ func modifySpeedModifier(value):
 #bloque les mouvements du joueur
 func stop():
 	setMovement(Vector2.ZERO)
+
+
+func checkBumperMovement(bumper):
+	pass
+		
