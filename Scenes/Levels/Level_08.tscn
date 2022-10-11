@@ -47,32 +47,32 @@ listBlocks = [ NodePath("../BlocksBLu/Block"), NodePath("../BlocksBLu/Block2"), 
 
 [node name="Block" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 720, 656 )
-color = Color( 0, 0.486275, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 isVisible = false
 
 [node name="Block2" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 688, 656 )
-color = Color( 0, 0.486275, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 isVisible = false
 
 [node name="Block3" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 656, 656 )
-color = Color( 0, 0.486275, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 isVisible = false
 
 [node name="Block4" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 624, 656 )
-color = Color( 0, 0.486275, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 isVisible = false
 
 [node name="Block5" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 592, 656 )
-color = Color( 0, 0.486275, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 isVisible = false
 
 [node name="Block6" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 560, 656 )
-color = Color( 0, 0.486275, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 isVisible = false
 
 [node name="InGameUI" parent="." instance=ExtResource( 8 )]

@@ -29,28 +29,28 @@ position = Vector2( 240, 752 )
 
 [node name="Block" parent="BlueBlocks" instance=ExtResource( 4 )]
 position = Vector2( -16, -240 )
-color = Color( 0, 0.717647, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 
 [node name="Block2" parent="BlueBlocks" instance=ExtResource( 4 )]
 position = Vector2( 16, -240 )
-color = Color( 0, 0.717647, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 
 [node name="Block3" parent="BlueBlocks" instance=ExtResource( 4 )]
 position = Vector2( 48, -240 )
-color = Color( 0, 0.717647, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 
 [node name="Block4" parent="BlueBlocks" instance=ExtResource( 4 )]
 position = Vector2( 80, -240 )
-color = Color( 0, 0.717647, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 
 [node name="Interruptor" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 0, -112 )
-color = Color( 0, 0.717647, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3"), NodePath("../Block4") ]
 
 [node name="Interruptor2" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 64, -112 )
-color = Color( 0, 0.717647, 1, 1 )
+color = Color( 0.670588, 0.121569, 0.396078, 1 )
 listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3"), NodePath("../Block4") ]
 
 [node name="InGameUI" parent="." instance=ExtResource( 7 )]
