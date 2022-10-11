@@ -34,8 +34,6 @@ func _physics_process(delta):
 	if result1 && result2:
 		if(result1.collider.is_in_group("Player") || result2.collider.is_in_group("Player")):
 
-			print("true", result1.collider.global_position)
-
 			if(!bumpingPlayer):
 				GameManager.wait(0.25, "setBumpingToFalse" ,self)
 				bumpingPlayer = true

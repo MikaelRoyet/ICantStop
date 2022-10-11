@@ -33,13 +33,10 @@ func _physics_process(delta):
 				death()
 			if collision.collider.is_in_group("Bumper"):
 				if collision.collider.has_method("move"):
-					print("colliosef", collision.collider.bumpingPlayer)
 					if(collision.collider.bumpingPlayer):
-						print("colliOUI")
 						if(collision.collider.isMovingBumper):
 							moveToPoint(position + collision.collider.lastMovement * 10)
 							setMovement(collision.collider.lastMovement * SPEED)
-							print("BUUUUUUMPP", collision.collider.lastMovement)
 						else:
 							setMovement(collision.collider.lastMovement)
 							collision.collider.move(collision.collider.lastMovement * -1)
