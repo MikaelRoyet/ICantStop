@@ -35,9 +35,9 @@ position = Vector2( 464, 384 )
 scale = Vector2( 3, 10 )
 
 [node name="AccelerationZone3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 656, 368 )
-scale = Vector2( 3, 5 )
+position = Vector2( 656, 384 )
+scale = Vector2( 3, 10 )
 
 [node name="AccelerationZone4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1024, 320 )
-scale = Vector2( 20, 2 )
+position = Vector2( 1040, 320 )
+scale = Vector2( 15, 2 )
