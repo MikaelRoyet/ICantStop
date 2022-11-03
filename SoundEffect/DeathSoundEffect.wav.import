@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DeathSoundEffect.wav-d581e91b6c56645296602320a23c66c5.sample"
+
+[deps]
+
+source_file="res://SoundEffect/DeathSoundEffect.wav"
+dest_files=[ "res://.import/DeathSoundEffect.wav-d581e91b6c56645296602320a23c66c5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

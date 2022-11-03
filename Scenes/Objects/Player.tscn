@@ -82,4 +82,6 @@ texture = ExtResource( 2 )
 frames = SubResource( 11 )
 animation = "Dash"
 
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]

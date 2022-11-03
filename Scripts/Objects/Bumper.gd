@@ -24,7 +24,6 @@ func _physics_process(delta):
 	var result = space_state.intersect_ray(position, position + lastMovement, [self])
 	
 	if result:
-		print("Hit at point: ", result.collider.name)
 		if(result.collider.is_in_group("Player")):
 			bumpingPlayer = true
 		else:
