@@ -14,6 +14,7 @@ var bumpingPlayer = true
 var velocity = Vector2(0,0)
 var isMovingBumper = true
 var isSaw = false
+var speedModifier
 
 var colorPoint = load("res://Scenes/Objects/ColorPoint.tscn")
 
@@ -22,6 +23,7 @@ func _ready():
 	nextPoint = startingPoint
 	movingToPoint()
 	bumpingPlayer = false
+	speedModifier = 1
 
 
 func _physics_process(delta):
@@ -59,7 +61,7 @@ func _process(delta):
 
 	vector = (get_node(listPoints[nextPoint]).position - position).normalized()
 	lastMovement = vector
-	velocity = move_and_slide(vector * GameManager.SPEED * delta * 30)
+	velocity = move_and_slide(vector * GameManager.SPEED * delta * 30 * speedModifier)
 
 #func _draw():
 #	var drawPoint = 0
@@ -82,5 +84,7 @@ func move(movement):
 func setBumpingToFalse():
 	bumpingPlayer = false
 
+func modifySpeedModifier(value):
+	speedModifier = value
 
 

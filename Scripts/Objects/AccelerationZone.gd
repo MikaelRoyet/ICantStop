@@ -9,7 +9,7 @@ func _ready():
 	get_node("AnimationPlayer").play("colors")
 
 func _on_AccelerationZone_body_entered(body):
-	if "Player" in body.name:
+	if body.is_in_group("Bumper") or body.is_in_group("Player"):
 		body.modifySpeedModifier(speedModifier)
 
 
