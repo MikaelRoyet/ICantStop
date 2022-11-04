@@ -48,6 +48,7 @@ func _process(delta):
 			if collision.collider.is_in_group("Bumper"):
 				if collision.collider.has_method("move"):
 					collision.collider.move(collision.collider.lastMovement * -1)
+				AudioManager.playSound(AudioManager.soundEffectBump)
 	
 	if position.distance_to(get_node(listPoints[nextPoint]).position) < 3:
 
@@ -86,5 +87,3 @@ func setBumpingToFalse():
 
 func modifySpeedModifier(value):
 	speedModifier = value
-
-

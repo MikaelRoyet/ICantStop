@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 const SPEED = GameManager.SPEED
 
+onready var soundEffectPlayer : = $SoundEffectPlayer
+
 onready var particleBounce = load("res://Scenes/Particles/ParticleBounce.tscn")
 
 var velocityBumper = Vector2(0,0)
@@ -38,6 +40,7 @@ func _physics_process(delta):
 				if collision.collider.has_method("move"):
 					collision.collider.move(lastMovement)
 					bounce()
+				AudioManager.playSound(AudioManager.soundEffectBump)
 
 
 
@@ -56,3 +59,4 @@ func moveToPoint(point):
 func modifySpeedModifier(value):
 	speedModifier = value
 	move(lastMovement)
+

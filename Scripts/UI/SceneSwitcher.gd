@@ -4,11 +4,14 @@ onready var current_level = $Menu
 onready var anim = $AnimationPlayer
 onready var canvas = $CanvasLayer
 onready var colorRect = $CanvasLayer/ColorRect
+onready var audioPlayer = $SoundEffectPlayer
 
 var next_level = null
 
 func _ready():
 	current_level.connect("level_changed", self, 'handle_level_changed')
+	AudioManager.AudioPlayer = audioPlayer
+
 
 #Executé au changement de scene et apelle l'animation de transition
 func handle_level_changed(level_path: String):

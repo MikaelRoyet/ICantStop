@@ -21,6 +21,8 @@ func _on_Teleporter_body_entered(body):
 		var teleporter = get_node(arrivalPoint)
 		body.moveToPoint(teleporter.position)
 		teleporter.canTeleportBumper = false
+		
+	AudioManager.playSound(AudioManager.soundEffectBump)
 
 
 

@@ -6,8 +6,7 @@ onready var camera = $Camera2D
 onready var animatedSprite = $AnimatedSprite
 onready var soundEffectPlayer : = $SoundEffectPlayer
 
-var soundEffectDeath = load("res://SoundEffect/DeathSoundEffect.wav")
-var soundEffectBounce = load("res://SoundEffect/BumpSoundEffect.wav")
+
 
 var speedModifier
 var velocityPlayer
@@ -51,11 +50,13 @@ func _physics_process(delta):
 						else:
 							collision.collider.move(lastMovement)
 							bounce()
-					playSound(soundEffectBounce)
+					AudioManager.playSound(AudioManager.soundEffectBump)
 
 
 #Récupère la direction swiper par le joueur
 func _on_SwipeDetector_swiped(direction):
+	
+	AudioManager.playSound(AudioManager.soundEffectBump)
 	
 	#UP
 	if direction.x == 0 and direction.y == -1:
@@ -90,7 +91,7 @@ func death():
 		camera.apply_noise_shake(30, 60, 5)
 		animatedSprite.visible = false
 		trail.visible = false
-		playSound(soundEffectDeath)
+		AudioManager.playSound(AudioManager.soundEffectDeath)
 		GameManager.wait(0.3, "reset", self)
 
 	
