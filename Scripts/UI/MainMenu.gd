@@ -26,6 +26,13 @@ func _ready():
 	LevelPanel.visible = false
 	InfoPanel.visible = false
 	generateLevels()
+	
+	#Audio
+	if(AudioManager.isMute):
+		soundBtn.icon = iconMuted
+		soundBtn.pressed = true
+	else:
+		soundBtn.icon = iconSound
 
 
 #Charge le menu des niveaux
@@ -88,12 +95,12 @@ func refreshLevel():
 func _on_SoundButton_toggled(button_pressed):
 	if button_pressed :
 		soundBtn.icon = iconMuted
-		#soundEffectPlayer.pause_mode = true
-		# TODO je coupe le son
+		AudioManager.muteSoundEffect(true)
+
 	else :
 		soundBtn.icon = iconSound
-		#soundEffectPlayer.pause_mode = false
+		AudioManager.muteSoundEffect(false)
 		AudioManager.playSound(AudioManager.soundEffectPlop)
-		#TODO et je remet le son
+	
 
 

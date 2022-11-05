@@ -19,4 +19,5 @@ func emitSignalLevel():
 	
 func emitSignalMenu():
 	print(level_name)
+	AudioManager.playSound(AudioManager.soundEffectPlop)
 	emit_signal("level_changed", GameManager.MENU_SCENE)
