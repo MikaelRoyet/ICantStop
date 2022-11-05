@@ -16,5 +16,7 @@ func activateBlocks():
 		get_node(block).changeVisibility()
 
 
+
 func _on_Interruptor_body_entered(body):
+	AudioManager.playSound(AudioManager.soundEffectBump)
 	activateBlocks()

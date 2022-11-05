@@ -25,13 +25,17 @@ func _physics_process(delta):
 	velocityBumper = move_and_slide(velocityBumper)
 	
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(position, position + lastMovement, [self])
+	var vectorSwap = Vector2(lastMovement.y, lastMovement.x).normalized()
+	var result1 = space_state.intersect_ray(global_position + vectorSwap * 13, (global_position + vectorSwap * 13) + lastMovement * GameManager.SPEED, [self])
+	var result2 = space_state.intersect_ray(global_position + vectorSwap * -13, (global_position + vectorSwap * -13) + lastMovement * GameManager.SPEED, [self])
 	
-	if result:
-		if(result.collider.is_in_group("Player")):
-			bumpingPlayer = true
-		else:
-			bumpingPlayer = false
+	
+	if result1 && result2:
+		if(result1.collider.is_in_group("Player") || result2.collider.is_in_group("Player")):
+			print("ON DETEKT D TRUK")
+			if(!bumpingPlayer):
+				GameManager.wait(0.25, "setBumpingToFalse" ,self)
+				bumpingPlayer = true
 	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)

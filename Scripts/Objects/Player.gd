@@ -42,6 +42,7 @@ func _physics_process(delta):
 							moveToPoint(position + collision.collider.lastMovement * 10)
 							setMovement(collision.collider.lastMovement * SPEED)
 						else:
+							print("HAHAHAHAHAAHAHAHAHAHALABOULCE")
 							setMovement(collision.collider.lastMovement)
 							collision.collider.move(collision.collider.lastMovement * -1)
 					else:
