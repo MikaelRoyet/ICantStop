@@ -12,6 +12,7 @@ var bumpingPlayer = false
 var isMovingBumper = false
 var speedModifier
 
+export (bool) var isMovable = true
 export (Vector2) var directionStart = Vector2(0,0)
 
 func _ready():
@@ -49,8 +50,10 @@ func _physics_process(delta):
 
 
 func move(movement):
-	velocityBumper = movement * speedModifier
-	lastMovement = movement
+	
+	if isMovable:
+		velocityBumper = movement * speedModifier
+		lastMovement = movement
 	GameManager.createParticle(particleBounce, position, rotation_degrees)
 
 
