@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SoundEffectTeleporter.wav-23a320aabf56657d8c647a4a2f826188.sample"
+
+[deps]
+
+source_file="res://SoundEffect/SoundEffectTeleporter.wav"
+dest_files=[ "res://.import/SoundEffectTeleporter.wav-23a320aabf56657d8c647a4a2f826188.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

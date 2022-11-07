@@ -18,5 +18,5 @@ func activateBlocks():
 
 
 func _on_Interruptor_body_entered(body):
-	AudioManager.playSound(AudioManager.soundEffectBump)
+	AudioManager.playSound(AudioManager.soundEffectInterruptor)
 	activateBlocks()

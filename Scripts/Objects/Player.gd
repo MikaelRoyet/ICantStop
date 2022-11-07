@@ -42,7 +42,6 @@ func _physics_process(delta):
 							moveToPoint(position + collision.collider.lastMovement * 10)
 							setMovement(collision.collider.lastMovement * SPEED)
 						else:
-							print("HAHAHAHAHAAHAHAHAHAHALABOULCE")
 							setMovement(collision.collider.lastMovement)
 							collision.collider.move(collision.collider.lastMovement * -1)
 					else:
@@ -57,7 +56,7 @@ func _physics_process(delta):
 #Récupère la direction swiper par le joueur
 func _on_SwipeDetector_swiped(direction):
 	
-	AudioManager.playSound(AudioManager.soundEffectBump)
+	AudioManager.playSound(AudioManager.soundEffectDash)
 	
 	#UP
 	if direction.x == 0 and direction.y == -1:

@@ -11,7 +11,7 @@ func _ready():
 func _on_AccelerationZone_body_entered(body):
 	if body.is_in_group("Bumper") or body.is_in_group("Player"):
 		body.modifySpeedModifier(speedModifier)
-		AudioManager.playSound(AudioManager.soundEffectBump)
+		AudioManager.playSound(AudioManager.soundEffectAccel)
 
 
 func _on_AccelerationZone_body_exited(body):

@@ -79,7 +79,7 @@ isMovable = false
 position = Vector2( 944, -1072 )
 isMovable = false
 
-[node name="Bumper160" parent="." instance=ExtResource( 4 )]
+[node name="Bumper161" parent="." instance=ExtResource( 4 )]
 position = Vector2( 976, -1072 )
 isMovable = false
 
@@ -646,6 +646,5 @@ position = Vector2( 240, -96 )
 scale = Vector2( 13, 50 )
 
 [node name="AccelerationZone2" parent="." instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 784, -96 )
 scale = Vector2( 13, 50 )

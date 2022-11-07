@@ -22,7 +22,7 @@ func _on_Teleporter_body_entered(body):
 		body.moveToPoint(teleporter.position)
 		teleporter.canTeleportBumper = false
 		
-	AudioManager.playSound(AudioManager.soundEffectBump)
+	AudioManager.playSound(AudioManager.soundEffectTeleporter)
 
 
 
