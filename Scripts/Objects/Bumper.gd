@@ -67,3 +67,5 @@ func modifySpeedModifier(value):
 	speedModifier = value
 	move(lastMovement)
 
+func setBumpingToFalse():
+	bumpingPlayer = false

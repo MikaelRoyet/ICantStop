@@ -130,5 +130,33 @@
 	"world":0,
 	"scene":"Level_18.tscn",
 	"numero":"18",
+  },
+   "Level_19":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_20",
+	"world":0,
+	"scene":"Level_19.tscn",
+	"numero":"19",
+  },
+   "Level_20":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_21",
+	"world":0,
+	"scene":"Level_20.tscn",
+	"numero":"20",
+  },
+   "Level_21":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_22",
+	"world":0,
+	"scene":"Level_21.tscn",
+	"numero":"21",
+  },
+   "Level_22":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_23",
+	"world":0,
+	"scene":"Level_22.tscn",
+	"numero":"22",
   }
 }
