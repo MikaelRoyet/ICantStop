@@ -6,12 +6,11 @@ onready var camera = $Camera2D
 onready var animatedSprite = $AnimatedSprite
 onready var soundEffectPlayer : = $SoundEffectPlayer
 
-
-
 var speedModifier
 var velocityPlayer
 var idle = true
 var isDead = false
+var isStop = false
 var respawnPoint
 var lastMovement
 
@@ -55,36 +54,36 @@ func _physics_process(delta):
 
 #Récupère la direction swiper par le joueur
 func _on_SwipeDetector_swiped(direction):
-	
-	AudioManager.playSound(AudioManager.soundEffectDash)
-	
-	#UP
-	if direction.x == 0 and direction.y == -1:
-		setMovement(Vector2(0, SPEED))
-		rotation_degrees = 180
-		GameManager.createParticle(dashParticle, position, rotation_degrees)
-	
-	#DOWN
-	if direction.x == 0 and direction.y == 1:
-		setMovement(Vector2(0, -SPEED))
-		rotation_degrees = 0
-		GameManager.createParticle(dashParticle, position, rotation_degrees)
+	if !isStop:
 		
-	#LEFT
-	if direction.x == -1 and direction.y == 0:
-		setMovement(Vector2(SPEED, 0))
-		rotation_degrees = 90
-		GameManager.createParticle(dashParticle, position, rotation_degrees)
+		#UP
+		if direction.x == 0 and direction.y == -1:
+			setMovement(Vector2(0, SPEED))
+			rotation_degrees = 180
+			GameManager.createParticle(dashParticle, position, rotation_degrees)
 		
-	#RIGHT
-	if direction.x == 1 and direction.y == 0:
-		setMovement(Vector2(-SPEED, 0))
-		rotation_degrees = 270
-		GameManager.createParticle(dashParticle, position, rotation_degrees)
+		#DOWN
+		if direction.x == 0 and direction.y == 1:
+			setMovement(Vector2(0, -SPEED))
+			rotation_degrees = 0
+			GameManager.createParticle(dashParticle, position, rotation_degrees)
+			
+		#LEFT
+		if direction.x == -1 and direction.y == 0:
+			setMovement(Vector2(SPEED, 0))
+			rotation_degrees = 90
+			GameManager.createParticle(dashParticle, position, rotation_degrees)
+			
+		#RIGHT
+		if direction.x == 1 and direction.y == 0:
+			setMovement(Vector2(-SPEED, 0))
+			rotation_degrees = 270
+			GameManager.createParticle(dashParticle, position, rotation_degrees)
 	
 #Fonction exécutée quand le joueur perd
 func death():
-	if !idle :
+	if !idle:
+		stop()
 		idle = true
 		isDead = true
 		GameManager.createParticle(deathParticle, position, rotation_degrees)
@@ -98,12 +97,12 @@ func death():
 #Appelle le Reset le niveau
 func reset():
 	GameManager.resetLevel()
-	#moveToPoint(respawnPoint)
-	#speedModifier = 1
+
 	
 #Change la direction du joueur
 func setMovement(movement):
 	if !isDead:
+		AudioManager.playSound(AudioManager.soundEffectDash)
 		lastMovement = movement
 		velocityPlayer = movement * speedModifier
 		idle = false
@@ -132,6 +131,7 @@ func modifySpeedModifier(value):
 
 #bloque les mouvements du joueur
 func stop():
+	isStop = true
 	setMovement(Vector2.ZERO)
 
 
