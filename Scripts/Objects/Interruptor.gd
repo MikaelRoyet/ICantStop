@@ -18,5 +18,6 @@ func activateBlocks():
 
 
 func _on_Interruptor_body_entered(body):
-	AudioManager.playSound(AudioManager.soundEffectInterruptor)
-	activateBlocks()
+	if body.is_in_group("Bumper") or body.is_in_group("Player"):
+		AudioManager.playSound(AudioManager.soundEffectInterruptor)
+		activateBlocks()

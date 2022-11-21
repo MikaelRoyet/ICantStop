@@ -41,12 +41,10 @@ listBlocks = [ NodePath("../Block5"), NodePath("../Block6") ]
 [node name="Block5" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 304, -16 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block6" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 336, -16 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Blocks2" type="Node2D" parent="."]
 position = Vector2( -512, 0 )
@@ -59,9 +57,7 @@ listBlocks = [ NodePath("../Block5"), NodePath("../Block6") ]
 [node name="Block5" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 656, -16 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Block6" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 688, -16 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false

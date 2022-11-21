@@ -3,7 +3,7 @@
 [ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/MovingBumper.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=7]
@@ -26,26 +26,6 @@ position = Vector2( 240, 752 )
 [node name="EndLevel" parent="." instance=ExtResource( 5 )]
 position = Vector2( 80, -1232 )
 
-[node name="Bumper4" parent="." instance=ExtResource( 4 )]
-position = Vector2( -80, 24 )
-
-[node name="Bumper5" parent="." instance=ExtResource( 4 )]
-position = Vector2( -80, -312 )
-
-[node name="Bumper6" parent="." instance=ExtResource( 4 )]
-position = Vector2( -80, -16 )
-directionStart = Vector2( 0, -1 )
-
-[node name="Bumper7" parent="." instance=ExtResource( 4 )]
-position = Vector2( -80, -872 )
-
-[node name="Bumper8" parent="." instance=ExtResource( 4 )]
-position = Vector2( -80, -1144 )
-
-[node name="Bumper9" parent="." instance=ExtResource( 4 )]
-position = Vector2( -80, -912 )
-directionStart = Vector2( 0, -1 )
-
 [node name="BlocksBLu" type="Node" parent="."]
 
 [node name="Interruptor" parent="BlocksBLu" instance=ExtResource( 6 )]
@@ -56,14 +36,17 @@ listBlocks = [ NodePath("../Block4"), NodePath("../Block5"), NodePath("../Block6
 [node name="Block4" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 80, -336 )
 color = Color( 0.670588, 0.121569, 0.396078, 1 )
+isVisible = false
 
 [node name="Block5" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 48, -336 )
 color = Color( 0.670588, 0.121569, 0.396078, 1 )
+isVisible = false
 
 [node name="Block6" parent="BlocksBLu" instance=ExtResource( 3 )]
 position = Vector2( 112, -336 )
 color = Color( 0.670588, 0.121569, 0.396078, 1 )
+isVisible = false
 
 [node name="BlocksBLu2" type="Node" parent="."]
 
@@ -85,3 +68,30 @@ color = Color( 0.168627, 0.0588235, 0.329412, 1 )
 listBlocks = [ NodePath("../Block4"), NodePath("../Block5"), NodePath("../Block6") ]
 
 [node name="InGameUI" parent="." instance=ExtResource( 8 )]
+
+[node name="MB1" type="Node2D" parent="."]
+
+[node name="MovingBumper" parent="MB1" instance=ExtResource( 4 )]
+position = Vector2( -80, 16 )
+listPoints = [ NodePath("../Node2D"), NodePath("../Node2D2") ]
+isBoucle = true
+
+[node name="Node2D" type="Node2D" parent="MB1"]
+position = Vector2( -80, -304 )
+
+[node name="Node2D2" type="Node2D" parent="MB1"]
+position = Vector2( -80, 16 )
+
+[node name="MB2" type="Node2D" parent="."]
+position = Vector2( 0, -896 )
+
+[node name="MovingBumper" parent="MB2" instance=ExtResource( 4 )]
+position = Vector2( -80, 16 )
+listPoints = [ NodePath("../Node2D"), NodePath("../Node2D2") ]
+isBoucle = true
+
+[node name="Node2D" type="Node2D" parent="MB2"]
+position = Vector2( -80, -240 )
+
+[node name="Node2D2" type="Node2D" parent="MB2"]
+position = Vector2( -80, 16 )

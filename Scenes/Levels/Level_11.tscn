@@ -73,12 +73,10 @@ listBlocks = [ NodePath("../Block4"), NodePath("../Block5"), NodePath("../Block6
 [node name="Block5" parent="BlocksBLu3" instance=ExtResource( 5 )]
 position = Vector2( 560, 592 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block6" parent="BlocksBLu3" instance=ExtResource( 5 )]
 position = Vector2( 592, 592 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Interruptor" parent="BlocksBLu3" instance=ExtResource( 3 )]
 position = Vector2( 688, 432 )

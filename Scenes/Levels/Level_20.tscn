@@ -49,12 +49,10 @@ arrivalPoint = NodePath("../Teleporter3")
 [node name="Block" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 464, 656 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block2" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 496, 656 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Interruptor" parent="Blocks1" instance=ExtResource( 5 )]
 position = Vector2( 48, 528 )
@@ -67,12 +65,10 @@ position = Vector2( 0, 64 )
 [node name="Block" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 464, 656 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Block2" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 496, 656 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Interruptor" parent="Blocks2" instance=ExtResource( 5 )]
 position = Vector2( 912, 272 )

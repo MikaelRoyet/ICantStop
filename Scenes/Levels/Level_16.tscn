@@ -69,32 +69,26 @@ listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3"
 [node name="Block" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 848, 688 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block2" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 880, 688 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block3" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 912, 688 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block4" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 944, 688 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block5" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 976, 688 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Block6" parent="Blocks1" instance=ExtResource( 6 )]
 position = Vector2( 1008, 688 )
 color = Color( 1, 0.309804, 0.411765, 1 )
-isVisible = false
 
 [node name="Blocks2" type="Node2D" parent="."]
 position = Vector2( 416, 160 )
@@ -107,29 +101,23 @@ listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3"
 [node name="Block" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 432, 560 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Block2" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 464, 560 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Block3" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 496, 560 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Block4" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 528, 560 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Block5" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 560, 560 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
 
 [node name="Block6" parent="Blocks2" instance=ExtResource( 6 )]
 position = Vector2( 592, 560 )
 color = Color( 0.168627, 0.0588235, 0.329412, 1 )
-isVisible = false
