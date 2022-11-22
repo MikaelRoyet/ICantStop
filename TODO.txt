@@ -1,0 +1,60 @@
+TODOLIST
+
+*** GRAPHICS ***
+
+- Animations :
+	-> EndLevel
+	-> Portals
+	
+- Sprites :
+	-> Bumper / moving bumper
+	
+- Shaders :
+	-> EndLevel shader vortex
+	-> Bumper little anim with shader? (bouncy)
+	-> vortex effect (little) on TP?
+	-> Some effects on speedzone?
+	
+
+*** LEVEL DESIGN ***
+
+- Make some more levels (~40)
+- Try to established a progression and organize levels
+- Refactor levels to fit to the progression
+- Make levels for the holes in the progression (50 goal)
+
+*** SOUND FX ***
+
+- Redo dash sound effect
+
+
+
+*** MUSIC ***
+
+- Menu music
+- Level music (at least 1)
+
+
+*** APP STORE & ADS *** 
+
+- When everything above is DONE :
+	-> Put game IN PRIVATE on the appstore
+	-> Try to make very little ads on menu to test
+	-> Try to implement a buy game functionality to buy and remove ads
+	
+	
+	
+	
+	
+********************
+***** UPGRADES *****
+********************
+
+(in no particular order)
+
+- Customizable character (with money or levels finished)
+- Customizable trails (with money or levels finished)
+- "Hell" mode with the same level but really more challenging
+- "Hell" section wwith very difficult exclusive levels
+- More classic levels
+- 

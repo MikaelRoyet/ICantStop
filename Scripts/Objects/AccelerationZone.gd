@@ -15,5 +15,5 @@ func _on_AccelerationZone_body_entered(body):
 
 
 func _on_AccelerationZone_body_exited(body):
-	if "Player" in body.name:
+	if body.is_in_group("Player") or body.is_in_group("Bumper"):
 		body.modifySpeedModifier(1)

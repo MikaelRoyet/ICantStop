@@ -165,5 +165,12 @@
 	"world":0,
 	"scene":"Level_23.tscn",
 	"numero":"23",
+  },
+   "Level_24":	{
+	"name": "Turn things around",
+	"nextLevel": "Level_25",
+	"world":0,
+	"scene":"Level_24.tscn",
+	"numero":"24",
   }
 }
