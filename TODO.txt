@@ -58,3 +58,24 @@ TODOLIST
 - "Hell" section wwith very difficult exclusive levels
 - More classic levels
 - 
+
+
+
+
+************************
+***** LEVEL DESIGN *****
+************************
+1-2 basic movement
+3-4 basic interruptor
+5-6 advances interruptor
+7-8 basic TP
+9-10 advanced TP
+11-12 combine TP interruptor
+13-14 basic bumper
+15 advanced bumper 
+
+16-20 combine tp bumper interruptor (8x (16) , 9x remettre bouncing ?, 19, 22, 10x (20))
+21-22 basic speedzone
+23-24 advanced speedzone
+25-30 combine tp bumper interruptor speedzone
+31-40 all challenge

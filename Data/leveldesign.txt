@@ -21,7 +21,6 @@ shaders :
 
 petit crt effect sur l'enssemble?
 warp à la fin d'un level
-destruction de l'interieur sur mort
 apparition et disparition des blocs
 
 

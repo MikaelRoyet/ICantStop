@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=7]
+[ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=8]
+
+[node name="Level_17" type="Node2D"]
+script = ExtResource( 1 )
+level_name = "Level_17"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -458749, 23, 0, -458748, 23, 0, -458747, 23, 0, -458746, 23, 0, -458745, 23, 0, -458744, 23, 0, -458743, 23, 0, -458742, 23, 0, -458741, 23, 0, -393213, 23, 0, -393205, 23, 0, -327677, 23, 0, -327669, 23, 0, -262141, 23, 0, -262138, 23, 0, -262137, 23, 0, -262136, 23, 0, -262133, 23, 0, -196605, 23, 0, -196602, 23, 0, -196600, 23, 0, -196597, 23, 0, -131069, 23, 0, -131066, 23, 0, -131064, 23, 0, -131061, 23, 0, -65535, 23, 0, -65534, 23, 0, -65533, 23, 0, -65530, 23, 0, -65529, 23, 0, -65528, 23, 0, -65525, 23, 0, -65524, 23, 0, -65523, 23, 0, 1, 23, 0, 13, 23, 0, 65537, 23, 0, 65549, 23, 0, 131073, 23, 0, 131076, 23, 0, 131077, 23, 0, 131081, 23, 0, 131082, 23, 0, 131085, 23, 0, 196609, 23, 0, 196621, 23, 0, 262145, 23, 0, 262157, 23, 0, 327681, 23, 0, 327693, 23, 0, 458750, 23, 0, 458751, 23, 0, 393216, 23, 0, 393217, 23, 0, 393221, 23, 0, 393222, 23, 0, 393224, 23, 0, 393225, 23, 0, 393229, 23, 0, 393230, 23, 0, 393231, 23, 0, 393232, 23, 0, 524286, 23, 0, 458768, 23, 0, 589822, 23, 0, 589823, 23, 0, 524288, 23, 0, 524289, 23, 0, 524301, 23, 0, 524302, 23, 0, 524303, 23, 0, 524304, 23, 0, 589825, 23, 0, 589837, 23, 0, 655361, 23, 0, 655363, 23, 0, 655364, 23, 0, 655365, 23, 0, 655369, 23, 0, 655370, 23, 0, 655371, 23, 0, 655373, 23, 0, 720897, 23, 0, 720909, 23, 0, 786433, 23, 0, 786445, 23, 0, 851969, 23, 0, 851971, 23, 0, 851979, 23, 0, 851981, 23, 0, 917505, 23, 0, 917510, 23, 0, 917511, 23, 0, 917512, 23, 0, 917517, 23, 0, 983041, 23, 0, 983053, 23, 0, 1048577, 23, 0, 1048589, 23, 0, 1114113, 23, 0, 1114114, 23, 0, 1114115, 23, 0, 1114116, 23, 0, 1114117, 23, 0, 1114121, 23, 0, 1114122, 23, 0, 1114123, 23, 0, 1114124, 23, 0, 1114125, 23, 0, 1179653, 23, 0, 1179657, 23, 0, 1245189, 26, 0, 1245193, 24, 0, 1310725, 26, 0, 1310729, 24, 0, 1376261, 26, 0, 1376265, 24, 0, 1441797, 26, 0, 1441801, 24, 0, 1507333, 26, 0, 1507337, 24, 0, 1572869, 26, 0, 1572873, 24, 0, 1638405, 26, 0, 1638409, 24, 0, 1703941, 38, 0, 1703942, 17, 0, 1703943, 17, 0, 1703944, 17, 0, 1703945, 39, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 240, 752 )
+
+[node name="EndLevel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 240, -160 )
+
+[node name="InGameUI" parent="." instance=ExtResource( 3 )]
+
+[node name="Bumper" parent="." instance=ExtResource( 6 )]
+position = Vector2( 240, 240 )
+
+[node name="Blocks1" type="Node2D" parent="."]
+
+[node name="Interruptor" parent="Blocks1" instance=ExtResource( 4 )]
+position = Vector2( 496, 240 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+listBlocks = [ NodePath("../Block5"), NodePath("../Block6") ]
+
+[node name="Block5" parent="Blocks1" instance=ExtResource( 7 )]
+position = Vector2( 304, -16 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Block6" parent="Blocks1" instance=ExtResource( 7 )]
+position = Vector2( 336, -16 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Blocks2" type="Node2D" parent="."]
+position = Vector2( -512, 0 )
+
+[node name="Interruptor" parent="Blocks2" instance=ExtResource( 4 )]
+position = Vector2( 496, 240 )
+color = Color( 0.168627, 0.0588235, 0.329412, 1 )
+listBlocks = [ NodePath("../Block5"), NodePath("../Block6") ]
+
+[node name="Block5" parent="Blocks2" instance=ExtResource( 7 )]
+position = Vector2( 656, -16 )
+color = Color( 0.168627, 0.0588235, 0.329412, 1 )
+
+[node name="Block6" parent="Blocks2" instance=ExtResource( 7 )]
+position = Vector2( 688, -16 )
+color = Color( 0.168627, 0.0588235, 0.329412, 1 )

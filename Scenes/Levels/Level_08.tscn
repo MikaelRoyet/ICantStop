@@ -1,16 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Teleporter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=6]
 
 [node name="Level_08" type="Node2D"]
-script = ExtResource( 7 )
+script = ExtResource( 4 )
 level_name = "Level_08"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -18,55 +16,28 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 524291, 30, 0, 524292, 33, 0, 524293, 33, 0, 524294, 33, 0, 524295, 33, 0, 524296, 33, 0, 524297, 33, 0, 524298, 33, 0, 524299, 33, 0, 524300, 33, 0, 524301, 33, 0, 524302, 33, 0, 524303, 33, 0, 524304, 33, 0, 524305, 33, 0, 524306, 33, 0, 524307, 33, 0, 524308, 33, 0, 524309, 33, 0, 524310, 33, 0, 524311, 31, 0, 589827, 26, 0, 589847, 24, 0, 655363, 26, 0, 655383, 24, 0, 720899, 26, 0, 720919, 24, 0, 786435, 26, 0, 786443, 16, 0, 786444, 17, 0, 786445, 17, 0, 786446, 17, 0, 786447, 17, 0, 786448, 18, 0, 786455, 24, 0, 851971, 26, 0, 851979, 24, 0, 851984, 26, 0, 851991, 24, 0, 917507, 26, 0, 917515, 24, 0, 917520, 26, 0, 917527, 24, 0, 983043, 26, 0, 983051, 24, 0, 983056, 26, 0, 983063, 32, 0, 983064, 33, 0, 983065, 33, 0, 983066, 31, 0, 1048579, 26, 0, 1048587, 24, 0, 1048592, 26, 0, 1048602, 24, 0, 1114115, 26, 0, 1114123, 24, 0, 1114128, 26, 0, 1114135, 16, 0, 1114136, 17, 0, 1114137, 17, 0, 1114138, 39, 0, 1179651, 26, 0, 1179659, 24, 0, 1179664, 26, 0, 1179671, 24, 0, 1179672, 30, 0, 1179673, 33, 0, 1179674, 33, 0, 1179675, 31, 0, 1245187, 26, 0, 1245195, 24, 0, 1245200, 26, 0, 1245207, 24, 0, 1245208, 26, 0, 1245211, 24, 0, 1310723, 26, 0, 1310731, 24, 0, 1310736, 26, 0, 1310743, 24, 0, 1310744, 26, 0, 1310747, 24, 0, 1376259, 26, 0, 1376267, 24, 0, 1376272, 26, 0, 1376279, 24, 0, 1376280, 26, 0, 1376283, 24, 0, 1441795, 26, 0, 1441803, 24, 0, 1441808, 26, 0, 1441815, 24, 0, 1441816, 26, 0, 1441819, 24, 0, 1507331, 26, 0, 1507339, 24, 0, 1507344, 26, 0, 1507351, 32, 0, 1507352, 34, 0, 1507355, 24, 0, 1572867, 26, 0, 1572875, 24, 0, 1572880, 26, 0, 1572891, 24, 0, 1638403, 38, 0, 1638404, 17, 0, 1638405, 17, 0, 1638406, 17, 0, 1638407, 17, 0, 1638408, 17, 0, 1638409, 17, 0, 1638410, 17, 0, 1638411, 39, 0, 1638416, 26, 0, 1638427, 24, 0, 1703952, 38, 0, 1703953, 17, 0, 1703954, 17, 0, 1703955, 17, 0, 1703956, 17, 0, 1703957, 17, 0, 1703958, 17, 0, 1703959, 17, 0, 1703960, 17, 0, 1703961, 17, 0, 1703962, 17, 0, 1703963, 39, 0 )
+tile_data = PoolIntArray( 196604, 23, 0, 196605, 23, 0, 196606, 23, 0, 131072, 23, 0, 131073, 23, 0, 131074, 23, 0, 131075, 23, 0, 131076, 23, 0, 131077, 23, 0, 131078, 23, 0, 131079, 23, 0, 131080, 23, 0, 131081, 23, 0, 131082, 23, 0, 131083, 23, 0, 131084, 23, 0, 131085, 23, 0, 131086, 23, 0, 131087, 23, 0, 131088, 23, 0, 262140, 23, 0, 262142, 23, 0, 196608, 23, 0, 196624, 23, 0, 327676, 23, 0, 327678, 23, 0, 262144, 23, 0, 262160, 23, 0, 393212, 23, 0, 393214, 23, 0, 327680, 23, 0, 327696, 23, 0, 458748, 23, 0, 458750, 23, 0, 393216, 23, 0, 393219, 23, 0, 393220, 23, 0, 393221, 23, 0, 393222, 23, 0, 393223, 23, 0, 393224, 23, 0, 393225, 23, 0, 393226, 23, 0, 393227, 23, 0, 393228, 23, 0, 393229, 23, 0, 393232, 23, 0, 524284, 23, 0, 524286, 23, 0, 458752, 23, 0, 458755, 23, 0, 458765, 23, 0, 458768, 23, 0, 589820, 23, 0, 589822, 23, 0, 524288, 23, 0, 524291, 23, 0, 524295, 23, 0, 524296, 23, 0, 524297, 23, 0, 524298, 23, 0, 524299, 23, 0, 524301, 23, 0, 524304, 23, 0, 655356, 23, 0, 655358, 23, 0, 589824, 23, 0, 589827, 23, 0, 589831, 23, 0, 589835, 23, 0, 589837, 23, 0, 589840, 23, 0, 720892, 23, 0, 720894, 23, 0, 655360, 23, 0, 655363, 23, 0, 655367, 23, 0, 655371, 23, 0, 655373, 23, 0, 655376, 23, 0, 786428, 23, 0, 786430, 23, 0, 720896, 23, 0, 720899, 23, 0, 720903, 23, 0, 720907, 23, 0, 720909, 23, 0, 720912, 23, 0, 851964, 23, 0, 851966, 23, 0, 786432, 23, 0, 786435, 23, 0, 786439, 23, 0, 786443, 23, 0, 786445, 23, 0, 786448, 23, 0, 917500, 23, 0, 917502, 23, 0, 851968, 23, 0, 851971, 23, 0, 851973, 23, 0, 851974, 23, 0, 851975, 23, 0, 851979, 23, 0, 851981, 23, 0, 851984, 23, 0, 983036, 23, 0, 983038, 23, 0, 917504, 23, 0, 917507, 23, 0, 917509, 23, 0, 917515, 23, 0, 917517, 23, 0, 917520, 23, 0, 1048572, 23, 0, 1048574, 23, 0, 983040, 23, 0, 983043, 23, 0, 983045, 23, 0, 983051, 23, 0, 983053, 23, 0, 983056, 23, 0, 1114108, 23, 0, 1114109, 23, 0, 1114110, 23, 0, 1048576, 23, 0, 1048577, 23, 0, 1048578, 23, 0, 1048579, 23, 0, 1048581, 23, 0, 1048587, 23, 0, 1048589, 23, 0, 1048592, 23, 0, 1114117, 23, 0, 1114123, 23, 0, 1114125, 23, 0, 1114128, 23, 0, 1179653, 23, 0, 1179657, 23, 0, 1179658, 23, 0, 1179659, 23, 0, 1179661, 23, 0, 1179662, 23, 0, 1179663, 23, 0, 1179664, 23, 0, 1245189, 23, 0, 1245193, 23, 0, 1310724, 23, 0, 1310725, 23, 0, 1310729, 23, 0, 1376259, 23, 0, 1376260, 23, 0, 1376265, 23, 0, 1441795, 23, 0, 1441801, 23, 0, 1507331, 23, 0, 1507337, 23, 0, 1572867, 23, 0, 1572873, 23, 0, 1638403, 17, 0, 1638404, 17, 0, 1638405, 17, 0, 1638406, 17, 0, 1638407, 17, 0, 1638408, 17, 0, 1638409, 17, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 240, 752 )
+position = Vector2( 176, 752 )
 
 [node name="EndLevel" parent="." instance=ExtResource( 5 )]
-position = Vector2( 832, 640 )
+position = Vector2( -80, 496 )
 
-[node name="Bumper" parent="." instance=ExtResource( 4 )]
-position = Vector2( 240, 528 )
+[node name="Teleporter" parent="." instance=ExtResource( 3 )]
+position = Vector2( 304, 336 )
+arrivalPoint = NodePath("../Teleporter2")
 
-[node name="Bumper4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 688, 528 )
+[node name="Teleporter2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64, 480 )
+arrivalPoint = NodePath("../Teleporter")
 
-[node name="Bumper2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 176, 528 )
+[node name="Teleporter3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 480, 544 )
+arrivalPoint = NodePath("../Teleporter4")
 
-[node name="Bumper3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 304, 528 )
+[node name="Teleporter4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -80, 112 )
+arrivalPoint = NodePath("../Teleporter3")
 
-[node name="Interruptor" parent="." instance=ExtResource( 6 )]
-position = Vector2( 816, 528 )
-color = Color( 0.670588, 0.121569, 0.396078, 1 )
-listBlocks = [ NodePath("../BlocksBLu/Block"), NodePath("../BlocksBLu/Block2"), NodePath("../BlocksBLu/Block3"), NodePath("../BlocksBLu/Block4"), NodePath("../BlocksBLu/Block5"), NodePath("../BlocksBLu/Block6") ]
-
-[node name="BlocksBLu" type="Node" parent="."]
-
-[node name="Block" parent="BlocksBLu" instance=ExtResource( 3 )]
-position = Vector2( 720, 656 )
-color = Color( 0.670588, 0.121569, 0.396078, 1 )
-
-[node name="Block2" parent="BlocksBLu" instance=ExtResource( 3 )]
-position = Vector2( 688, 656 )
-color = Color( 0.670588, 0.121569, 0.396078, 1 )
-
-[node name="Block3" parent="BlocksBLu" instance=ExtResource( 3 )]
-position = Vector2( 656, 656 )
-color = Color( 0.670588, 0.121569, 0.396078, 1 )
-
-[node name="Block4" parent="BlocksBLu" instance=ExtResource( 3 )]
-position = Vector2( 624, 656 )
-color = Color( 0.670588, 0.121569, 0.396078, 1 )
-
-[node name="Block5" parent="BlocksBLu" instance=ExtResource( 3 )]
-position = Vector2( 592, 656 )
-color = Color( 0.670588, 0.121569, 0.396078, 1 )
-
-[node name="Block6" parent="BlocksBLu" instance=ExtResource( 3 )]
-position = Vector2( 560, 656 )
-color = Color( 0.670588, 0.121569, 0.396078, 1 )
-
-[node name="InGameUI" parent="." instance=ExtResource( 8 )]
+[node name="InGameUI" parent="." instance=ExtResource( 6 )]
