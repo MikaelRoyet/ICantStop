@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/AccelerationZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=9]
+
+[node name="Level_21" type="Node2D"]
+script = ExtResource( 1 )
+level_name = "Level_21"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -1245176, 23, 0, -1245175, 23, 0, -1245174, 23, 0, -1245173, 23, 0, -1245172, 23, 0, -1179640, 23, 0, -1179636, 23, 0, -1114104, 23, 0, -1114100, 23, 0, -1048568, 23, 0, -1048564, 23, 0, -983036, 23, 0, -983035, 23, 0, -983034, 23, 0, -983032, 23, 0, -983028, 23, 0, -917500, 23, 0, -917498, 23, 0, -917496, 23, 0, -917492, 23, 0, -851964, 23, 0, -851962, 23, 0, -851960, 23, 0, -851956, 23, 0, -786428, 23, 0, -786426, 23, 0, -786424, 23, 0, -786420, 23, 0, -720892, 23, 0, -720890, 23, 0, -720888, 23, 0, -720884, 23, 0, -655356, 23, 0, -655354, 23, 0, -655352, 23, 0, -655348, 23, 0, -589820, 23, 0, -589818, 23, 0, -589816, 23, 0, -589812, 23, 0, -524284, 23, 0, -524282, 23, 0, -524280, 23, 0, -524276, 23, 0, -458748, 23, 0, -458746, 23, 0, -458744, 23, 0, -458740, 23, 0, -393212, 23, 0, -393210, 23, 0, -393208, 23, 0, -393204, 23, 0, -327676, 23, 0, -327674, 23, 0, -327672, 23, 0, -327668, 23, 0, -262140, 23, 0, -262138, 23, 0, -262136, 23, 0, -262132, 23, 0, -196604, 23, 0, -196602, 23, 0, -196600, 23, 0, -196596, 23, 0, -131068, 23, 0, -131066, 23, 0, -131064, 23, 0, -131060, 23, 0, -65532, 23, 0, -65530, 23, 0, -65528, 23, 0, -65524, 23, 0, 4, 23, 0, 6, 23, 0, 8, 23, 0, 12, 23, 0, 65540, 23, 0, 65542, 23, 0, 65544, 23, 0, 65548, 23, 0, 131076, 23, 0, 131078, 23, 0, 131080, 23, 0, 131084, 23, 0, 196612, 23, 0, 196614, 23, 0, 196616, 23, 0, 196620, 23, 0, 262148, 23, 0, 262150, 23, 0, 262152, 23, 0, 262156, 23, 0, 327684, 23, 0, 327686, 23, 0, 327688, 23, 0, 327692, 23, 0, 393220, 23, 0, 393222, 23, 0, 393224, 23, 0, 393228, 23, 0, 458756, 23, 0, 458758, 23, 0, 458760, 23, 0, 458764, 23, 0, 524292, 23, 0, 524294, 23, 0, 524296, 23, 0, 524300, 23, 0, 589828, 23, 0, 589830, 23, 0, 589832, 23, 0, 589836, 23, 0, 655364, 23, 0, 655366, 23, 0, 655368, 23, 0, 655372, 23, 0, 720900, 23, 0, 720902, 23, 0, 720904, 23, 0, 720908, 23, 0, 786436, 23, 0, 786438, 23, 0, 786440, 23, 0, 786444, 23, 0, 851972, 23, 0, 851974, 23, 0, 851976, 23, 0, 851980, 23, 0, 917507, 23, 0, 917508, 23, 0, 917510, 23, 0, 917511, 23, 0, 917512, 23, 0, 917516, 23, 0, 983043, 23, 0, 983047, 23, 0, 983052, 23, 0, 1048579, 23, 0, 1048583, 23, 0, 1048588, 23, 0, 1114115, 23, 0, 1114119, 23, 0, 1114124, 23, 0, 1179651, 23, 0, 1179660, 23, 0, 1245187, 23, 0, 1245196, 23, 0, 1310723, 23, 0, 1310727, 23, 0, 1310732, 23, 0, 1376259, 23, 0, 1376263, 23, 0, 1376268, 23, 0, 1441795, 23, 0, 1441804, 23, 0, 1507331, 23, 0, 1507340, 23, 0, 1572867, 23, 0, 1572876, 23, 0, 1638403, 23, 0, 1638412, 23, 0, 1703939, 23, 0, 1703948, 23, 0, 1769475, 23, 0, 1769476, 23, 0, 1769477, 23, 0, 1769478, 23, 0, 1769479, 23, 0, 1769480, 23, 0, 1769481, 23, 0, 1769482, 23, 0, 1769483, 23, 0, 1769484, 23, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 240, 784 )
+
+[node name="EndLevel" parent="." instance=ExtResource( 5 )]
+position = Vector2( 336, -528 )
+
+[node name="InGameUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Blocks1" type="Node2D" parent="."]
+
+[node name="Block" parent="Blocks1" instance=ExtResource( 8 )]
+position = Vector2( 304, -368 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Block2" parent="Blocks1" instance=ExtResource( 8 )]
+position = Vector2( 336, -368 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Block3" parent="Blocks1" instance=ExtResource( 8 )]
+position = Vector2( 368, -368 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Interruptor" parent="Blocks1" instance=ExtResource( 4 )]
+position = Vector2( 176, -208 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3") ]
+
+[node name="Interruptor2" parent="Blocks1" instance=ExtResource( 4 )]
+position = Vector2( 176, -368 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3") ]
+
+[node name="Bumper2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 176, 528 )
+
+[node name="AccelerationZone" parent="." instance=ExtResource( 3 )]
+position = Vector2( 336, 80 )
+scale = Vector2( 3, 25 )

@@ -73,9 +73,10 @@ TODOLIST
 11-12 combine TP interruptor
 13-14 basic bumper
 15 advanced bumper 
-
 16-20 combine tp bumper interruptor (8x (16) , 9x remettre bouncing ?, 19, 22, 10x (20))
-21-22 basic speedzone
+21-22 basic speedzone (13x)
 23-24 advanced speedzone
-25-30 combine tp bumper interruptor speedzone
+
+
+25-30 combine tp bumper interruptor speedzone (21x, 
 31-40 all challenge
