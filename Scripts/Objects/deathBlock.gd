@@ -4,11 +4,17 @@ extends KinematicBody2D
 const SPEED = GameManager.SPEED
 var velocityBumper = Vector2(0,0)
 var lastMovement
+var bumpingPlayer = false
+var isMovingBumper = false
 
+export (Vector2) var directionStart = Vector2(0,0)
 
 
 func _ready():
 	lastMovement = Vector2(0,0)
+	if directionStart != Vector2(0,0):
+		velocityBumper = directionStart * SPEED
+		lastMovement = directionStart * SPEED
 
 func _physics_process(delta):
 	velocityBumper = move_and_slide(velocityBumper)
