@@ -55,7 +55,7 @@ TODOLIST
 - Customizable character (with money or levels finished)
 - Customizable trails (with money or levels finished)
 - "Hell" mode with the same level but really more challenging
-- "Hell" section wwith very difficult exclusive levels
+- "Hell" section with very difficult exclusive levels
 - More classic levels
 - 
 
@@ -80,5 +80,6 @@ TODOLIST
 28-29 death bumper basic and advanced
 30-32 death bumper + else
 
+33-35 all challenge
 
-33-40 all challenge
+36-40 all challenge

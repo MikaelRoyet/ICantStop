@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/UI/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Objects/EndLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/InGameUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/deathBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Interruptor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Bumper.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Objects/Block.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TileMap/WallTileMap.tres" type="TileSet" id=9]
+[ext_resource path="res://Scenes/Objects/Teleporter.tscn" type="PackedScene" id=10]
+
+[node name="Level_34" type="Node2D"]
+script = ExtResource( 1 )
+level_name = "Level_34"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -262158, 23, 0, -262157, 23, 0, -262156, 23, 0, -262155, 23, 0, -262154, 23, 0, -262153, 23, 0, -262152, 23, 0, -262151, 23, 0, -262150, 23, 0, -262149, 23, 0, -196622, 23, 0, -196613, 23, 0, -131086, 23, 0, -131077, 23, 0, -65550, 23, 0, -65541, 23, 0, -14, 23, 0, -5, 23, 0, -4, 23, 0, -3, 23, 0, -2, 23, 0, -1, 23, 0, -65536, 23, 0, -65535, 23, 0, -65534, 23, 0, -65533, 23, 0, -65532, 23, 0, -65531, 23, 0, -65530, 23, 0, -65529, 23, 0, -65528, 23, 0, -65527, 23, 0, -65526, 23, 0, -65525, 23, 0, -65524, 23, 0, -65523, 23, 0, -65522, 23, 0, -65521, 23, 0, -65520, 23, 0, -65519, 23, 0, 65522, 23, 0, 17, 23, 0, 131058, 23, 0, 65553, 23, 0, 196594, 23, 0, 131089, 23, 0, 262130, 23, 0, 262134, 23, 0, 262135, 23, 0, 262136, 23, 0, 262137, 23, 0, 262143, 23, 0, 196608, 23, 0, 196609, 23, 0, 196610, 23, 0, 196611, 23, 0, 196612, 23, 0, 196613, 23, 0, 196614, 23, 0, 196615, 23, 0, 196616, 23, 0, 196617, 23, 0, 196618, 23, 0, 196619, 23, 0, 196625, 23, 0, 327666, 23, 0, 327670, 23, 0, 327673, 23, 0, 327679, 23, 0, 262155, 23, 0, 262161, 23, 0, 393202, 23, 0, 393206, 23, 0, 393209, 23, 0, 393215, 23, 0, 327691, 23, 0, 327697, 23, 0, 458738, 23, 0, 458742, 23, 0, 458743, 23, 0, 458744, 23, 0, 458745, 23, 0, 458751, 23, 0, 393227, 23, 0, 393233, 23, 0, 524274, 23, 0, 524287, 23, 0, 458763, 23, 0, 458769, 23, 0, 589810, 23, 0, 589823, 23, 0, 524299, 23, 0, 524305, 23, 0, 655346, 23, 0, 655359, 23, 0, 589835, 23, 0, 589841, 23, 0, 720882, 23, 0, 720895, 23, 0, 655371, 23, 0, 655377, 23, 0, 786418, 23, 0, 786431, 23, 0, 720903, 23, 0, 720904, 23, 0, 720905, 23, 0, 720907, 23, 0, 720908, 23, 0, 720913, 23, 0, 851954, 23, 0, 851967, 23, 0, 786432, 23, 0, 786433, 23, 0, 786434, 23, 0, 786435, 23, 0, 786436, 23, 0, 786437, 23, 0, 786438, 23, 0, 786439, 23, 0, 786441, 23, 0, 786442, 23, 0, 786443, 23, 0, 786444, 23, 0, 786449, 23, 0, 917490, 23, 0, 851980, 23, 0, 851985, 23, 0, 983026, 23, 0, 917516, 23, 0, 917521, 23, 0, 1048562, 23, 0, 1048563, 23, 0, 1048564, 23, 0, 1048565, 23, 0, 1048566, 23, 0, 1048567, 23, 0, 1048568, 23, 0, 1048569, 23, 0, 1048570, 23, 0, 1048571, 23, 0, 1048572, 23, 0, 1048573, 23, 0, 1048574, 23, 0, 1048575, 23, 0, 983040, 23, 0, 983041, 23, 0, 983042, 23, 0, 983043, 23, 0, 983047, 23, 0, 983049, 23, 0, 983050, 23, 0, 983051, 23, 0, 983052, 23, 0, 983053, 23, 0, 983054, 23, 0, 983055, 23, 0, 983056, 23, 0, 983057, 23, 0, 1048579, 23, 0, 1048583, 23, 0, 1048584, 23, 0, 1048585, 23, 0, 1048586, 23, 0, 1114115, 23, 0, 1114119, 23, 0, 1179651, 23, 0, 1179655, 23, 0, 1245185, 23, 0, 1245186, 23, 0, 1245187, 23, 0, 1245191, 23, 0, 1245192, 23, 0, 1245193, 23, 0, 1310721, 23, 0, 1310729, 23, 0, 1376257, 23, 0, 1376265, 23, 0, 1441793, 23, 0, 1441801, 23, 0, 1507329, 23, 0, 1507337, 23, 0, 1572865, 23, 0, 1572873, 23, 0, 1638401, 23, 0, 1638409, 23, 0, 1703937, 23, 0, 1703945, 23, 0, 1769473, 23, 0, 1769474, 23, 0, 1769475, 23, 0, 1769476, 23, 0, 1769477, 23, 0, 1769478, 23, 0, 1769479, 23, 0, 1769480, 23, 0, 1769481, 23, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 752 )
+
+[node name="EndLevel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 336, 448 )
+
+[node name="InGameUI" parent="." instance=ExtResource( 3 )]
+
+[node name="deathBlock3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 272, 401 )
+
+[node name="deathBlock4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 272, 495 )
+
+[node name="deathBlock5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 272, 448 )
+directionStart = Vector2( 0, 1 )
+
+[node name="Bumper" parent="." instance=ExtResource( 7 )]
+position = Vector2( 432, 272 )
+
+[node name="Blocks1" type="Node2D" parent="."]
+
+[node name="Block" parent="Blocks1" instance=ExtResource( 8 )]
+position = Vector2( -207, 80 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Block2" parent="Blocks1" instance=ExtResource( 8 )]
+position = Vector2( -207, 16 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Block3" parent="Blocks1" instance=ExtResource( 8 )]
+position = Vector2( -207, 48 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+
+[node name="Interruptor" parent="Blocks1" instance=ExtResource( 6 )]
+position = Vector2( -16, 16 )
+color = Color( 1, 0.309804, 0.411765, 1 )
+listBlocks = [ NodePath("../Block"), NodePath("../Block2"), NodePath("../Block3") ]
+
+[node name="Blocks2" type="Node2D" parent="."]
+position = Vector2( -896, -96 )
+
+[node name="Block" parent="Blocks2" instance=ExtResource( 8 )]
+position = Vector2( 1464, 743 )
+color = Color( 0.168627, 0.0588235, 0.329412, 1 )
+
+[node name="Block2" parent="Blocks2" instance=ExtResource( 8 )]
+position = Vector2( 1464, 775 )
+color = Color( 0.168627, 0.0588235, 0.329412, 1 )
+
+[node name="Interruptor" parent="Blocks2" instance=ExtResource( 6 )]
+position = Vector2( 1848, 743 )
+color = Color( 0.168627, 0.0588235, 0.329412, 1 )
+listBlocks = [ NodePath("../Block"), NodePath("../Block2") ]
+
+[node name="Teleporter" parent="." instance=ExtResource( 10 )]
+position = Vector2( 784, 288 )
+arrivalPoint = NodePath("../Teleporter2")
+
+[node name="Teleporter2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 176, 1200 )
+arrivalPoint = NodePath("../Teleporter")
