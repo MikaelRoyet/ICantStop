@@ -28,6 +28,7 @@ func _physics_process(delta):
 				if collision.collider.has_method("move"):
 					collision.collider.move(lastMovement)
 					bounce()
+				AudioManager.playSound(AudioManager.soundEffectBump)
 
 
 
