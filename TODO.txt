@@ -79,9 +79,4 @@ TODOLIST
 25-27 combine tp bumper interruptor speedzone
 28-29 death bumper basic and advanced
 30-32 death bumper + else
-
 33-35 all challenge
-
-
-35
-

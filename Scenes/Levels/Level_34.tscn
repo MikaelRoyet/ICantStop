@@ -32,10 +32,9 @@ position = Vector2( 320, 448 )
 
 [node name="deathBlock5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 272, 448 )
-directionStart = Vector2( 0, 1 )
 
 [node name="Bumper" parent="." instance=ExtResource( 7 )]
-position = Vector2( 400, 272 )
+position = Vector2( 400, 176 )
 
 [node name="Blocks1" type="Node2D" parent="."]
 
